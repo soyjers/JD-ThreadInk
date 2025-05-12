@@ -1,0 +1,151 @@
+.nav {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Logo {
+    width: 140px;
+}
+
+.fondo {
+    background-color: #fff;
+}
+
+.ChangeLanguage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnInicio {
+    margin-left: 20px;
+    margin-right: 20px;
+    transform: translateY(30px);
+}
+
+.txtInicio {
+    font-size: 22px;
+    font-family: 'Poppins',sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('../Img/FondoImg.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: start;
+    padding: 0px 800px 0px 80px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+.buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-color: #25D366;
+    color: rgb(255, 255, 255);
+}
+
+/* Botón activo de idioma */
+.active-lang {
+    background-color: #00ffcc;
+    color: #333;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    animation: none !important; /* Desactiva la animación pulsante */
+}
+
+/* Imagen normal */
+.ChangeLanguage img {
+    transition: all 0.3s ease;
+}
+
+/* Imagen en hover */
+.ChangeLanguage button:hover img {
+    height: var(--sz-text);
+    width: var(--sz-text);
+    top: calc(var(--gen-sz)/2);
+    left: calc(var(--sz-text)/4);
+}
+
+/* Imagen cuando el botón está activo */
+.active-lang img {
+    height: var(--sz-text);
+    width: var(--sz-text);
+    top: calc(var(--gen-sz)/2);
+    left: calc(var(--sz-text)/4);
+    filter: brightness(1.1);
+    animation: none !important; /* Desactiva cualquier animación */
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background-color: #1ebe5d;
+}

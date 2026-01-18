@@ -1,69 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title data-i18n="title">JD ThreadInk - En</title>
-  <link rel="stylesheet" href="../CSS/Inicio.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">JD ThreadInk - Sobre Nosotros</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="../CSS/Inicio.css">
+    <link rel="stylesheet" href="../CSS/SobreNosotros.css">
 </head>
-
 <body>
-  <nav class="nav sticky-top">
-    <div>
-      <a href="./Inicio.html"><img src="../Img/logoCompleto.png" alt="" class="Logo"></a>
-    </div>
 
-    <div style="display: flex; align-items: center;">
-      <button class="btn btnInicio"><a data-i18n="Home" class="txtInicio" href="../HTML/Inicio.html"></a></button>
-      <button class="btn btnInicio"><a data-i18n="About" class="txtInicio font-bold"></a></button>
-      <button class="btn btnInicio"><a data-i18n="Contact" class="txtInicio " href="../HTML/contacto.html"></a></button>
-    </div>
-    <div class="ChangeLanguage">
+    <nav class="main-nav">
+        <a href="./Inicio.html" class="nav-logo"><img src="../Img/logoCompleto.png" alt="Logo"></a>
+        <div class="nav-links">
+            <a href="./Inicio.html" class="nav-item" data-i18n="Home">Inicio</a>
+            <a href="./SobreNosotros.html" class="nav-item active" data-i18n="About">Sobre Nosotros</a>
+            <a href="./contacto.html" class="nav-item" data-i18n="Contact">Contacto</a>
+        </div>
+        <div class="language-switcher">
+            <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" class="lang-flag"><span class="lang-text">EN</span></button>
+            <button onclick="setLanguage('es')" class="lang-btn"><img src="../Img/COL.avif" class="lang-flag"><span class="lang-text">ES</span></button>
+        </div>
+    </nav>
 
-      <div style="padding-right: 10px;">
-        <!-- Botón EN -->
-        <button onclick="setLanguage('en')"
-          class="group relative outline-0 bg-black [--sz-btn:55px] [--space:calc(var(--sz-btn)/5.5)] [--gen-sz:calc(var(--space)*2)] [--sz-text:calc(var(--sz-btn)-var(--gen-sz))] h-[var(--sz-btn)] w-[var(--sz-btn)] border border-solid border-transparent rounded-xl flex items-center justify-center aspect-square cursor-pointer transition-transform duration-200 active:scale-[0.95] [box-shadow:#3c40434d_0_1px_2px_0,#3c404326_0_2px_6px_2px,#0000004d_0_30px_60px_-30px,#343459_0_-2px_6px_0_inset]">
-          <!-- SVG Bandera USA -->
-          <img src="../Img/USA.jpg" alt="USA Flag"
-            class="animate-pulse absolute z-10 top-[calc(var(--sz-text)/7)] left-[calc(var(--sz-text)/7)] h-[var(--gen-sz)] w-[var(--gen-sz)] group-hover:h-[var(--sz-text)] group-hover:w-[var(--sz-text)] group-hover:left-[calc(var(--sz-text)/4)] group-hover:top-[calc(calc(var(--gen-sz))/2)] rounded-sm" />
-          <span class="txtInicio text-white text-lg font-bold z-20">EN</span>
-        </button>
-      </div>
-      <div style="padding-right: 20px;">
-        <!-- Botón ES -->
-        <button onclick="setLanguage('es')"
-          class="group relative outline-0 bg-black [--sz-btn:55px] [--space:calc(var(--sz-btn)/5.5)] [--gen-sz:calc(var(--space)*2)] [--sz-text:calc(var(--sz-btn)-var(--gen-sz))] h-[var(--sz-btn)] w-[var(--sz-btn)] border border-solid border-transparent rounded-xl flex items-center justify-center aspect-square cursor-pointer transition-transform duration-200 active:scale-[0.95] [box-shadow:#3c40434d_0_1px_2px_0,#3c404326_0_2px_6px_2px,#0000004d_0_30px_60px_-30px,#343459_0_-2px_6px_0_inset]">
-          <!-- SVG Bandera Colombia -->
-          <img src="../Img/COL.avif" alt="Colombia Flag"
-            class="animate-pulse absolute z-10 top-[calc(var(--sz-text)/7)] left-[calc(var(--sz-text)/7)] h-[var(--gen-sz)] w-[var(--gen-sz)] group-hover:h-[var(--sz-text)] group-hover:w-[var(--sz-text)] group-hover:left-[calc(var(--sz-text)/4)] group-hover:top-[calc(calc(var(--gen-sz))/2)] rounded-sm" />
-          <span class="txtInicio text-white text-lg font-bold z-20">ES</span>
-        </button>
-      </div>
-    </div>
+    <header class="about-header">
+        <div class="header-content">
+            <h1 data-i18n="About">Sobre Nosotros</h1>
+            <p>Conoce más sobre nuestra pasión y nuestro trabajo.</p>
+        </div>
+    </header>
 
-  </nav>
+    <section class="about-text-section">
+        <div class="text-container">
+            <h2>Nuestra Historia</h2>
+            <p>En <strong>JD THREADINK</strong>, transformamos ideas en prendas únicas. Cada hilo cuenta una historia y cada estampado refleja una identidad.</p>
+            <p>Nuestra misión es brindar calidad premium en cada detalle, desde el bordado más complejo hasta el estampado más vibrante.</p>
+        </div>
+    </section>
 
+    <section class="product-gallery-section">
+        <div class="gallery-header">
+            <h2>Nuestro Trabajo</h2>
+            <p>Una muestra de la calidad y dedicación en cada pieza.</p>
+        </div>
 
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="../Img/Producto/6.JPG" alt="Bordado Stitch" loading="lazy">
+                <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="../Img/Producto/10.JPG" alt="Parche Bordado" loading="lazy">
+                <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="../Img/Producto/1.jpg" alt="Bordado Mrs" loading="lazy">
+                <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="../Img/Producto/4.jpg" alt="Gorras Personalizadas" loading="lazy">
+                <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="../Img/Producto/13.jpg" alt="Gorra Roja" loading="lazy">
+                <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+             <div class="gallery-item">
+                <img src="../Img/Producto/7.jpg" alt="Polo Bordada" loading="lazy">
+                <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+    </section>
 
-  <footer style="text-align: center; padding: 20px; background-color: #f2f2f2; font-size: 14px; color: #555;">
-    &copy; 2025 JD ThreadInk. Todos los derechos reservados.
-</footer>
+    <footer class="main-footer">
+        <p>&copy; 2025 JD ThreadInk. Todos los derechos reservados.</p>
+    </footer>
 
-
-
-  <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float" aria-label="Chat en WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script src="../JS/inicio.js"></script>
-  <script src="../JS/Idioma.js"></script>
+    <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <script src="../JS/Idioma.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,63 @@
+/* Header Simple */
+.about-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/FondoImg.png') center/cover;
+    height: 350px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: white;
+}
+.about-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+.about-header p { font-size: 1.2rem; opacity: 0.9; }
+
+/* Texto Historia */
+.about-text-section { padding: 4rem 2rem; background: white; text-align: center; }
+.text-container { max-width: 800px; margin: 0 auto; line-height: 1.8; color: #444; font-size: 1.1rem; }
+.text-container h2 { font-size: 2.5rem; color: #333; margin-bottom: 1.5rem; font-weight: 700; }
+
+/* --- GALERÍA GRID (Masonry Style moderno) --- */
+.product-gallery-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.gallery-header { text-align: center; margin-bottom: 3rem; }
+.gallery-header h2 { font-size: 2.5rem; font-weight: 800; color: #333; margin-bottom: 0.5rem; }
+
+.gallery-grid {
+    display: grid;
+    /* Grid responsivo automático: mínimo 300px por imagen */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    height: 300px; /* Altura fija para uniformidad */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover { transform: translateY(-5px); }
+
+.gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el cuadro sin deformar */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* Efecto Overlay al pasar el mouse */
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay { opacity: 1; }
+.overlay i { color: white; font-size: 2rem; }

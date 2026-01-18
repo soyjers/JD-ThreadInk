@@ -4,129 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">JD ThreadInk - Inicio</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../CSS/Inicio.css">
 </head>
-
 <body>
 
-    <nav class="main-nav sticky-top">
-        <a href="./Inicio.html" class="nav-logo">
-            <img src="../Img/logoCompleto.png" alt="JD ThreadInk Logo">
-        </a>
-
+    <nav class="main-nav">
+        <a href="./Inicio.html" class="nav-logo"><img src="../Img/logoCompleto.png" alt="Logo"></a>
         <div class="nav-links">
-            <a href="../HTML/Inicio.html" class="nav-item active" data-i18n="Home">Inicio</a>
-            <a href="../HTML/SobreNosotros.html" class="nav-item" data-i18n="About">Sobre Nosotros</a>
-            <a href="../HTML/contacto.html" class="nav-item" data-i18n="Contact">Contacto</a>
+            <a href="./Inicio.html" class="nav-item active" data-i18n="Home">Inicio</a>
+            <a href="./SobreNosotros.html" class="nav-item" data-i18n="About">Sobre Nosotros</a>
+            <a href="./contacto.html" class="nav-item" data-i18n="Contact">Contacto</a>
         </div>
-
         <div class="language-switcher">
-            <button onclick="setLanguage('en')" class="lang-btn group" aria-label="English">
-                <img src="../Img/USA.jpg" alt="USA Flag" class="lang-flag">
-                <span class="lang-text">EN</span>
-            </button>
-            
-            <button onclick="setLanguage('es')" class="lang-btn group" aria-label="Español">
-                <img src="../Img/COL.avif" alt="Colombia Flag" class="lang-flag">
-                <span class="lang-text">ES</span>
-            </button>
+            <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" class="lang-flag"><span class="lang-text">EN</span></button>
+            <button onclick="setLanguage('es')" class="lang-btn"><img src="../Img/COL.avif" class="lang-flag"><span class="lang-text">ES</span></button>
         </div>
     </nav>
 
     <header class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title" data-i18n="PieDeTitulo1"></h1>
+            <h1 class="hero-title" data-i18n="PieDeTitulo1">Título Principal</h1>
             <ul class="hero-list">
-                <li data-i18n="PieDeTitulo2"></li>
-                <li data-i18n="PieDeTitulo2_1"></li>
-                <li data-i18n="PieDeTitulo2_2"></li>
-                <li data-i18n="PieDeTitulo2_3"></li>
+                <li data-i18n="PieDeTitulo2">Item 1</li>
+                <li data-i18n="PieDeTitulo2_1">Item 2</li>
+                <li data-i18n="PieDeTitulo2_2">Item 3</li>
+                <li data-i18n="PieDeTitulo2_3">Item 4</li>
             </ul>
-            <div class="hero-cta">
-                <a href="https://wa.me/17148048375" class="cta-button" data-i18n="Contact2"></a>
-            </div>
+            <a href="https://wa.me/17148048375" class="cta-hero-btn" data-i18n="Contact2">CONTÁCTANOS</a>
         </div>
     </header>
 
     <section class="quote-section">
-        <div class="container text-center">
-            <h2 class="quote-text" data-i18n="Frase1"></h2>
-        </div>
+        <h2 class="quote-text" data-i18n="Frase1">Frase Inspiradora</h2>
     </section>
 
     <section class="services-section">
         <article class="service-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-star"></i>
-            </div>
-            <h3 class="service-title" data-i18n="Servicio1_Titulo"></h3>
-            <p class="service-desc" data-i18n="Servicio1_Descripcion"></p>
+            <div class="icon-circle"><i class="fa-solid fa-star"></i></div>
+            <h3 class="service-title" data-i18n="Servicio1_Titulo">Servicio 1</h3>
+            <p data-i18n="Servicio1_Descripcion">Desc 1</p>
         </article>
-
         <article class="service-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-shirt"></i>
-            </div>
-            <h3 class="service-title" data-i18n="Servicio2_Titulo"></h3>
-            <p class="service-desc" data-i18n="Servicio2_Descripcion"></p>
+            <div class="icon-circle"><i class="fa-solid fa-shirt"></i></div>
+            <h3 class="service-title" data-i18n="Servicio2_Titulo">Servicio 2</h3>
+            <p data-i18n="Servicio2_Descripcion">Desc 2</p>
         </article>
-
         <article class="service-card">
-            <div class="icon-circle">
-                <i class="fa-solid fa-scissors"></i>
-            </div>
-            <h3 class="service-title" data-i18n="Servicio3_Titulo"></h3>
-            <p class="service-desc" data-i18n="Servicio3_Descripcion"></p>
+            <div class="icon-circle"><i class="fa-solid fa-scissors"></i></div>
+            <h3 class="service-title" data-i18n="Servicio3_Titulo">Servicio 3</h3>
+            <p data-i18n="Servicio3_Descripcion">Desc 3</p>
         </article>
     </section>
 
     <section class="cta-banner-section">
-        <div class="container">
-            <div class="cta-card-bg">
-                <div class="cta-content-box">
-                    <h2 class="cta-title" data-i18n="EstamosParaAyudarte_Titulo"></h2>
-                    <p data-i18n="EstamosParaAyudarte_Descripcion1"></p>
-                    <p class="font-bold" data-i18n="EstamosParaAyudarte_Descripcion2"></p>
-                    <a href="../HTML/contacto.html" class="btn-white" data-i18n="EstamosParaAyudarte_Boton"></a>
-                </div>
+        <div class="cta-card-bg">
+            <div class="cta-content-box">
+                <h2 class="cta-title" data-i18n="EstamosParaAyudarte_Titulo">Estamos para ayudarte</h2>
+                <p data-i18n="EstamosParaAyudarte_Descripcion1">Texto 1</p>
+                <p class="font-bold" data-i18n="EstamosParaAyudarte_Descripcion2" style="margin-top:10px; font-weight:700;">Texto 2</p>
+                
+                <a href="./contacto.html" class="btn-green-solid" data-i18n="EstamosParaAyudarte_Boton">¡CONTÁCTANOS!</a>
             </div>
         </div>
     </section>
 
-    <section class="categories-section text-center">
-        <h2 class="section-heading" data-i18n="categories">Categorías</h2>
-        
+    <section class="categories-section">
+        <h2 style="font-size:2rem; font-weight:700; margin-bottom:3rem;" data-i18n="categories">Categorías</h2>
         <div class="categories-grid">
-            <div class="category-item">
-                <img src="../Img/Camisa.png" alt="Camisas" loading="lazy">
-                <div class="cat-overlay" data-i18n="camisas">Camisas</div>
-            </div>
-            <div class="category-item">
-                <img src="../Img/chaqueta.png" alt="Chaquetas" loading="lazy">
-                <div class="cat-overlay" data-i18n="chaquetas">Chaquetas</div>
-            </div>
-            <div class="category-item">
-                <img src="../Img/Hoodie.png" alt="Hoodies" loading="lazy">
-                <div class="cat-overlay" data-i18n="hoodies">Hoodies</div>
-            </div>
-            <div class="category-item">
-                <img src="../Img/gorra.png" alt="Gorras" loading="lazy">
-                <div class="cat-overlay" data-i18n="gorras">Gorras</div>
-            </div>
-            <div class="category-item">
-                <img src="../Img/camiseta.png" alt="Camisetas" loading="lazy">
-                <div class="cat-overlay" data-i18n="camisetas">Camisetas</div>
-            </div>
-            <div class="category-item">
-                <img src="../Img/ChaquetaDeCuero.png" alt="Cuero" loading="lazy">
-                <div class="cat-overlay" data-i18n="cuero">Cuero</div>
-            </div>
+            <div class="category-item"><img src="../Img/Camisa.png"><div class="cat-overlay" data-i18n="camisas">Camisas</div></div>
+            <div class="category-item"><img src="../Img/chaqueta.png"><div class="cat-overlay" data-i18n="chaquetas">Chaquetas</div></div>
+            <div class="category-item"><img src="../Img/Hoodie.png"><div class="cat-overlay" data-i18n="hoodies">Hoodies</div></div>
+            <div class="category-item"><img src="../Img/gorra.png"><div class="cat-overlay" data-i18n="gorras">Gorras</div></div>
+            <div class="category-item"><img src="../Img/camiseta.png"><div class="cat-overlay" data-i18n="camisetas">Camisetas</div></div>
+            <div class="category-item"><img src="../Img/ChaquetaDeCuero.png"><div class="cat-overlay" data-i18n="cuero">Cuero</div></div>
         </div>
     </section>
 
@@ -134,11 +87,8 @@
         <p>&copy; 2025 JD ThreadInk. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float" aria-label="Chat en WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="../JS/inicio.js"></script>
+    <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
     <script src="../JS/Idioma.js"></script>
+    <script src="../JS/inicio.js"></script>
 </body>
 </html>

@@ -1,63 +1,134 @@
-/* Header específico de Contacto */
+/* =========================================
+   ESTILOS ESPECÍFICOS: CONTACTO / REDES SOCIALES
+   ========================================= */
+
+/* --- 1. HEADER (Igualado a Sobre Nosotros para Consistencia) --- */
 .contact-header-bg {
-  height: 400px;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/AtencionCliente.png') center/cover;
-  display: flex; align-items: center; justify-content: center;
-  color: white; margin-bottom: 4rem;
+  /* Altura consistente de 50% de la pantalla */
+  height: 50vh;
+  min-height: 400px;
+  
+  /* Fondo con efecto Parallax (se queda quieto al bajar) */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('../Img/AtencionCliente.png') center/cover;
+  background-attachment: fixed;
+  
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  color: white; 
+  margin-bottom: 5rem; /* Separación grande antes del contenido */
 }
-.contact-main-title { font-size: 4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
 
-/* Sección Social */
-.social-section { max-width: 1200px; margin: 0 auto 5rem; padding: 0 2rem; }
-.text-center { text-align: center; margin-bottom: 3rem; }
+.contact-main-title {
+  font-size: 4rem; 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
+/* --- 2. SECCIÓN PRINCIPAL (Contenedor) --- */
+.social-section { 
+  max-width: 1200px; 
+  margin: 0 auto 5rem; /* Margen inferior grande */
+  padding: 0 2rem; 
+}
+
+.text-center { 
+  text-align: center; 
+  margin-bottom: 4rem; /* Espacio entre título y tarjetas */
+}
+
+/* --- 3. GRID DE REDES (Aquí está la separación) --- */
 .social-grid {
   display: grid;
+  /* Columnas automáticas pero con un ancho mínimo decente */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  
+  /* GAP DE 4REM: Esto es lo que separa las tarjetas visualmente */
+  gap: 4rem; 
+  
   justify-items: center;
+  padding-bottom: 2rem;
 }
 
-/* Tarjeta Base */
+/* --- 4. TARJETA DE RED SOCIAL (Diseño) --- */
 .social-card {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: white; width: 100%; max-width: 350px;
-  padding: 3rem 2rem; border-radius: 20px;
-  text-decoration: none; color: #333;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #eee;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  
+  background: white; 
+  width: 100%; 
+  max-width: 320px; /* Limitamos el ancho para que se vean elegantes */
+  padding: 3.5rem 2rem; /* Mucho "aire" interno */
+  
+  border-radius: 25px; /* Bordes modernos y suaves */
+  text-decoration: none; 
+  color: #333;
+  
+  /* Sombra difusa y suave */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.03);
+  
+  /* Animación fluida */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
 }
 
-.social-card:hover { transform: translateY(-10px); }
+/* Efecto al pasar el mouse (Levitación) */
+.social-card:hover { 
+  transform: translateY(-15px); 
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
 
-.icon-wrapper { font-size: 3.5rem; margin-bottom: 1.5rem; transition: transform 0.3s; }
-.social-card:hover .icon-wrapper { transform: scale(1.1) rotate(5deg); }
+/* --- 5. ELEMENTOS INTERNOS --- */
+.icon-wrapper { 
+  font-size: 3.5rem; 
+  margin-bottom: 1.5rem; 
+  transition: transform 0.3s; 
+}
 
-.social-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
-.social-card p { color: #666; margin-bottom: 2rem; font-weight: 500; }
+.social-card:hover .icon-wrapper { 
+  transform: scale(1.1) rotate(5deg); 
+}
+
+.social-card h3 { 
+  font-size: 1.8rem; 
+  font-weight: 800; 
+  margin-bottom: 0.5rem; 
+  color: #333;
+}
+
+.social-card p { 
+  color: #666; 
+  margin-bottom: 2rem; 
+  font-weight: 500; 
+}
 
 .btn-follow {
-  padding: 10px 30px; border-radius: 50px;
-  font-weight: 700; color: white;
-  text-transform: uppercase; letter-spacing: 1px;
+  padding: 12px 35px; 
+  border-radius: 50px;
+  font-weight: 700; 
+  color: white;
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+  font-size: 0.9rem;
   transition: opacity 0.2s;
 }
 
-/* --- ESTILOS ESPECÍFICOS POR RED (CORREGIDOS) --- */
+/* --- 6. COLORES POR RED SOCIAL --- */
 
-/* Instagram */
+/* Instagram (Con fix de compatibilidad) */
 .instagram .icon-wrapper {
-  /* Gradiente Estándar */
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  /* Compatibilidad para recortar el fondo al texto */
   -webkit-background-clip: text;
-  background-clip: text; /* <--- ESTA LÍNEA ARREGLA LA ADVERTENCIA */
-  /* Hacer el texto transparente para ver el fondo */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-.instagram:hover { box-shadow: 0 20px 40px rgba(220, 39, 67, 0.2); }
+.instagram:hover { box-shadow: 0 20px 40px rgba(220, 39, 67, 0.15); }
 .instagram .btn-follow { background: linear-gradient(45deg, #f09433, #bc1888); }
 
 /* TikTok */
@@ -65,10 +136,10 @@
   color: #000; 
   filter: drop-shadow(2px 2px 0px #25F4EE) drop-shadow(-2px -2px 0px #FE2C55); 
 }
-.tiktok:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.tiktok:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 .tiktok .btn-follow { background-color: #000; }
 
 /* WhatsApp */
 .whatsapp .icon-wrapper { color: #25D366; }
-.whatsapp:hover { box-shadow: 0 20px 40px rgba(37, 211, 102, 0.2); }
+.whatsapp:hover { box-shadow: 0 20px 40px rgba(37, 211, 102, 0.15); }
 .whatsapp .btn-follow { background-color: #25D366; }

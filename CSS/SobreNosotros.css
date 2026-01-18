@@ -1,12 +1,21 @@
-/* Header Simple */
+/* Busca .about-header y REEMPLÁZALO por esto: */
 .about-header {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/FondoImg.png') center/cover;
-    height: 350px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../Img/FondoImg.png') center/cover;
+    /* CAMBIO CLAVE: Usamos 'vh' (viewport height) para que se adapte a la pantalla */
+    height: 50vh; 
+    min-height: 400px; /* Para que no se vea enano en móviles */
     display: flex; align-items: center; justify-content: center;
     text-align: center; color: white;
+    /* UX: Efecto Parallax suave */
+    background-attachment: fixed; 
 }
-.about-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; }
-.about-header p { font-size: 1.2rem; opacity: 0.9; }
+
+.about-header h1 { 
+    font-size: 4rem; /* Texto más grande para igualar impacto */
+    font-weight: 800; 
+    margin-bottom: 0.5rem; 
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
 /* Texto Historia */
 .about-text-section { padding: 4rem 2rem; background: white; text-align: center; }
@@ -61,3 +70,4 @@
 
 .gallery-item:hover .overlay { opacity: 1; }
 .overlay i { color: white; font-size: 2rem; }
+

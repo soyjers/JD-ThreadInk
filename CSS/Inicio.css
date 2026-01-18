@@ -176,3 +176,21 @@ ul { list-style: none; padding: 0; margin: 0; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s;
 }
 .whatsapp-float:hover { transform: scale(1.1); }
+
+
+/* Animación de entrada suave (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clase utilitaria para aplicar la animación */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}

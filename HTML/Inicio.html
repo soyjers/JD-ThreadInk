@@ -1,177 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title data-i18n="title">JD ThreadInk - En</title>
-  <link rel="stylesheet" href="../CSS/Inicio.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">JD ThreadInk - Inicio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../CSS/Inicio.css">
 </head>
 
 <body>
-  <nav class="nav sticky-top">
-    <div>
-      <a href="./Inicio.html"><img src="../Img/logoCompleto.png" alt="" class="Logo"></a>
-    </div>
 
-    <div style="display: flex; align-items: center;">
-      <button class="btn btnInicio"><a data-i18n="Home" class="txtInicio font-bold"></a></button>
-      <button class="btn btnInicio"><a data-i18n="About" class="txtInicio " href="../HTML/SobreNosotros.html"></a></button>
-      <button class="btn btnInicio"><a data-i18n="Contact" class="txtInicio " href="../HTML/contacto.html"></a></button>
-    </div>
-    <div class="ChangeLanguage">
+    <nav class="main-nav sticky-top">
+        <a href="./Inicio.html" class="nav-logo">
+            <img src="../Img/logoCompleto.png" alt="JD ThreadInk Logo">
+        </a>
 
-      <div style="padding-right: 10px;">
-        <!-- Botón EN -->
-        <button onclick="setLanguage('en')"
-          class="group relative outline-0 bg-black [--sz-btn:55px] [--space:calc(var(--sz-btn)/5.5)] [--gen-sz:calc(var(--space)*2)] [--sz-text:calc(var(--sz-btn)-var(--gen-sz))] h-[var(--sz-btn)] w-[var(--sz-btn)] border border-solid border-transparent rounded-xl flex items-center justify-center aspect-square cursor-pointer transition-transform duration-200 active:scale-[0.95] [box-shadow:#3c40434d_0_1px_2px_0,#3c404326_0_2px_6px_2px,#0000004d_0_30px_60px_-30px,#343459_0_-2px_6px_0_inset]">
-          <!-- SVG Bandera USA -->
-          <img src="../Img/USA.jpg" alt="USA Flag"
-            class="animate-pulse absolute z-10 top-[calc(var(--sz-text)/7)] left-[calc(var(--sz-text)/7)] h-[var(--gen-sz)] w-[var(--gen-sz)] group-hover:h-[var(--sz-text)] group-hover:w-[var(--sz-text)] group-hover:left-[calc(var(--sz-text)/4)] group-hover:top-[calc(calc(var(--gen-sz))/2)] rounded-sm" />
-          <span class="txtInicio text-white text-lg font-bold z-20">EN</span>
-        </button>
-      </div>
-      <div style="padding-right: 20px;">
-        <!-- Botón ES -->
-        <button onclick="setLanguage('es')"
-          class="group relative outline-0 bg-black [--sz-btn:55px] [--space:calc(var(--sz-btn)/5.5)] [--gen-sz:calc(var(--space)*2)] [--sz-text:calc(var(--sz-btn)-var(--gen-sz))] h-[var(--sz-btn)] w-[var(--sz-btn)] border border-solid border-transparent rounded-xl flex items-center justify-center aspect-square cursor-pointer transition-transform duration-200 active:scale-[0.95] [box-shadow:#3c40434d_0_1px_2px_0,#3c404326_0_2px_6px_2px,#0000004d_0_30px_60px_-30px,#343459_0_-2px_6px_0_inset]">
-          <!-- SVG Bandera Colombia -->
-          <img src="../Img/COL.avif" alt="Colombia Flag"
-            class="animate-pulse absolute z-10 top-[calc(var(--sz-text)/7)] left-[calc(var(--sz-text)/7)] h-[var(--gen-sz)] w-[var(--gen-sz)] group-hover:h-[var(--sz-text)] group-hover:w-[var(--sz-text)] group-hover:left-[calc(var(--sz-text)/4)] group-hover:top-[calc(calc(var(--gen-sz))/2)] rounded-sm" />
-          <span class="txtInicio text-white text-lg font-bold z-20">ES</span>
-        </button>
-      </div>
-    </div>
-
-  </nav>
-  <section class="fondo">
-
-    <section class="hero">
-      <div class="overlay"></div>
-      <div class="hero-content">
-        <div style="display: flex; flex-direction: column;">
-          <div>
-            <h1 style="font-size: 50px; font-weight: bold;" data-i18n="PieDeTitulo1"></h1>
-          </div>
-          <ul style="padding-top: 40px;">
-            <li style="font-size: 20px; list-style-type: none;" data-i18n="PieDeTitulo2"></li>
-            <li style="font-size: 20px; list-style-type: none;" data-i18n="PieDeTitulo2_1"></li>
-            <li style="font-size: 20px; list-style-type: none;" data-i18n="PieDeTitulo2_2"></li>
-            <li style="font-size: 20px; list-style-type: none;" data-i18n="PieDeTitulo2_3"></li>
-          </ul>
+        <div class="nav-links">
+            <a href="../HTML/Inicio.html" class="nav-item active" data-i18n="Home">Inicio</a>
+            <a href="../HTML/SobreNosotros.html" class="nav-item" data-i18n="About">Sobre Nosotros</a>
+            <a href="../HTML/contacto.html" class="nav-item" data-i18n="Contact">Contacto</a>
         </div>
-        <div class="buttons">
-          <a href="https://wa.me/17148048375"><button data-i18n="Contact2"></button></a>
+
+        <div class="language-switcher">
+            <button onclick="setLanguage('en')" class="lang-btn group" aria-label="English">
+                <img src="../Img/USA.jpg" alt="USA Flag" class="lang-flag">
+                <span class="lang-text">EN</span>
+            </button>
+            
+            <button onclick="setLanguage('es')" class="lang-btn group" aria-label="Español">
+                <img src="../Img/COL.avif" alt="Colombia Flag" class="lang-flag">
+                <span class="lang-text">ES</span>
+            </button>
         </div>
-      </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="PieDeTitulo1"></h1>
+            <ul class="hero-list">
+                <li data-i18n="PieDeTitulo2"></li>
+                <li data-i18n="PieDeTitulo2_1"></li>
+                <li data-i18n="PieDeTitulo2_2"></li>
+                <li data-i18n="PieDeTitulo2_3"></li>
+            </ul>
+            <div class="hero-cta">
+                <a href="https://wa.me/17148048375" class="cta-button" data-i18n="Contact2"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="quote-section">
+        <div class="container text-center">
+            <h2 class="quote-text" data-i18n="Frase1"></h2>
+        </div>
     </section>
 
-    <section
-      style="display: flex; justify-content: center; text-align: center; padding-top: 40px; padding-left: 100px; padding-right: 100px; padding-bottom: 40px;">
-      <h1 data-i18n="Frase1" style="font-size: 20px;"></h1>
+    <section class="services-section">
+        <article class="service-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <h3 class="service-title" data-i18n="Servicio1_Titulo"></h3>
+            <p class="service-desc" data-i18n="Servicio1_Descripcion"></p>
+        </article>
+
+        <article class="service-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-shirt"></i>
+            </div>
+            <h3 class="service-title" data-i18n="Servicio2_Titulo"></h3>
+            <p class="service-desc" data-i18n="Servicio2_Descripcion"></p>
+        </article>
+
+        <article class="service-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h3 class="service-title" data-i18n="Servicio3_Titulo"></h3>
+            <p class="service-desc" data-i18n="Servicio3_Descripcion"></p>
+        </article>
     </section>
 
-  </section>
-
-  <div
-    style="background-color: #f6f7f8; display: flex; justify-content: center; padding: 80px; gap: 100px; flex-wrap: wrap; text-align: center;">
-
-    <div style="flex: 1; min-width: 250px;">
-      <div
-        style="width: 70px; height: 70px; background: linear-gradient(to right, #4e5b64, #597b94); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fa-solid fa-star" style="color: #ffffff; font-size: 30px;"></i>
-      </div>
-      <b style="padding-top: 20px; display: block; font-size: 18px;" data-i18n="Servicio1_Titulo"></b>
-      <p style="font-size: 15px; color: #333;" data-i18n="Servicio1_Descripcion"></p>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <div
-        style="width: 70px; height: 70px; background: linear-gradient(to right, #4e5b64, #597b94); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fa-solid fa-shirt" style="color: #ffffff; font-size: 30px;"></i>
-      </div>
-      <b style="padding-top: 20px; display: block; font-size: 18px;" data-i18n="Servicio2_Titulo"></b>
-      <p style="font-size: 15px; color: #333;" data-i18n="Servicio2_Descripcion"></p>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <div
-        style="width: 70px; height: 70px; background: linear-gradient(to right, #4e5b64, #597b94); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-        <i class="fa-solid fa-scissors" style="color: #ffffff; font-size: 30px;"></i>
-      </div>
-      <b style="padding-top: 20px; display: block; font-size: 18px;" data-i18n="Servicio3_Titulo"></b>
-      <p style="font-size: 15px; color: #333;" data-i18n="Servicio3_Descripcion"></p>
-    </div>
-
-  </div>
-
-  <section class="seccion-info">
-    <div class="contenedor-limite">
-      <div class="info-con-fondo">
-        <div class="contenido-texto">
-          <h1 class="EstamosParaAyudarte_Titulo" data-i18n="EstamosParaAyudarte_Titulo"></h1>
-          <p data-i18n="EstamosParaAyudarte_Descripcion1"></p>
-          <p><strong data-i18n="EstamosParaAyudarte_Descripcion2"></strong></p>
-          <a href="../HTML/contacto.html" class="boton" data-i18n="EstamosParaAyudarte_Boton"></a>
+    <section class="cta-banner-section">
+        <div class="container">
+            <div class="cta-card-bg">
+                <div class="cta-content-box">
+                    <h2 class="cta-title" data-i18n="EstamosParaAyudarte_Titulo"></h2>
+                    <p data-i18n="EstamosParaAyudarte_Descripcion1"></p>
+                    <p class="font-bold" data-i18n="EstamosParaAyudarte_Descripcion2"></p>
+                    <a href="../HTML/contacto.html" class="btn-white" data-i18n="EstamosParaAyudarte_Boton"></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-16 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-12" data-i18n="categories">Categories</h2>
+    <section class="categories-section text-center">
+        <h2 class="section-heading" data-i18n="categories">Categorías</h2>
+        
+        <div class="categories-grid">
+            <div class="category-item">
+                <img src="../Img/Camisa.png" alt="Camisas" loading="lazy">
+                <div class="cat-overlay" data-i18n="camisas">Camisas</div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/chaqueta.png" alt="Chaquetas" loading="lazy">
+                <div class="cat-overlay" data-i18n="chaquetas">Chaquetas</div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/Hoodie.png" alt="Hoodies" loading="lazy">
+                <div class="cat-overlay" data-i18n="hoodies">Hoodies</div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/gorra.png" alt="Gorras" loading="lazy">
+                <div class="cat-overlay" data-i18n="gorras">Gorras</div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/camiseta.png" alt="Camisetas" loading="lazy">
+                <div class="cat-overlay" data-i18n="camisetas">Camisetas</div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/ChaquetaDeCuero.png" alt="Cuero" loading="lazy">
+                <div class="cat-overlay" data-i18n="cuero">Cuero</div>
+            </div>
+        </div>
+    </section>
 
-    <div class="categories-grid">
-      <div class="category-container">
-        <img src="../Img/Camisa.png" alt="Camisas">
-        <div class="overlay2" data-i18n="camisas">Camisas</div>
-      </div>
+    <footer class="main-footer">
+        <p>&copy; 2025 JD ThreadInk. Todos los derechos reservados.</p>
+    </footer>
 
-      <div class="category-container">
-        <img src="../Img/chaqueta.png" alt="Chaquetas">
-        <div class="overlay2" data-i18n="chaquetas">Chaquetas</div>
-      </div>
+    <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float" aria-label="Chat en WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-      <div class="category-container">
-        <img src="../Img/Hoodie.png" alt="Hoodies">
-        <div class="overlay2" data-i18n="hoodies">Hoodies</div>
-      </div>
-
-      <div class="category-container">
-        <img src="../Img/gorra.png" alt="Gorras">
-        <div class="overlay2" data-i18n="gorras">Gorras</div>
-      </div>
-
-      <div class="category-container">
-        <img src="../Img/camiseta.png" alt="Camisetas">
-        <div class="overlay2" data-i18n="camisetas">Camisetas</div>
-      </div>
-
-      <div class="category-container">
-        <img src="../Img/ChaquetaDeCuero.png" alt="Chaquetas de cuero">
-        <div class="overlay2" data-i18n="cuero">Chaquetas de cuero</div>
-      </div>
-    </div>
-
-  </section>
-
-  <footer style="text-align: center; padding: 20px; background-color: #f2f2f2; font-size: 14px; color: #555;">
-    &copy; 2025 JD ThreadInk. Todos los derechos reservados.
-</footer>
-
-
-
-  <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float" aria-label="Chat en WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script src="../JS/inicio.js"></script>
-  <script src="../JS/Idioma.js"></script>
+    <script src="../JS/inicio.js"></script>
+    <script src="../JS/Idioma.js"></script>
 </body>
-
 </html>

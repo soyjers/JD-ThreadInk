@@ -1,76 +1,129 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li,
-a,
-b,
-button,
-span {
-    font-family: 'Quicksand', sans-serif;
+/* --- Variables Globales --- */
+:root {
+    --brand-dark: #333;
+    --brand-accent: #25D366; 
+    --brand-blue: #0077cc;
+    --font-main: 'Quicksand', sans-serif;
+    --bg-light: #f6f7f8;
 }
 
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
-.nav {
+/* --- Navegación --- */
+.main-nav {
     background-color: #fff;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.Logo {
+.nav-logo img {
     width: 140px;
+    display: block;
 }
 
-.fondo {
-    background-color: #fff;
-}
-
-.ChangeLanguage {
+.nav-links {
     display: flex;
-    justify-content: center;
+    gap: 15px;
     align-items: center;
 }
 
-.btnInicio {
-    margin-left: 20px;
-    margin-right: 20px;
-    transform: translateY(30px);
-}
-
-.txtInicio {
-    font-size: 22px;
+.nav-item {
     text-decoration: none;
-    color: black;
+    color: var(--brand-dark);
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
 }
 
-* {
-    margin: 0;
+.nav-item:hover, .nav-item.active {
+    font-weight: 700;
+    background-color: rgba(0,0,0,0.03);
+}
+
+/* --- Botones de Idioma --- */
+.language-switcher {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.lang-btn {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: black;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 0;
-    box-sizing: border-box;
 }
 
-.hero {
+.lang-btn:active { transform: scale(0.95); }
+
+.lang-flag {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    left: 15px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+.lang-text {
+    position: relative;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.lang-btn:hover .lang-flag {
+    width: 45px;
+    height: 45px;
+    top: 5px;
+    left: 5px;
+    opacity: 0.6;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* --- Hero Section --- */
+.hero-section {
     position: relative;
     height: 100vh;
     background: url('../Img/FondoImg.png') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 0 5%;
     color: white;
-    text-align: start;
-    padding: 0px 800px 0px 80px;
 }
 
-.overlay {
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
@@ -78,196 +131,164 @@ span {
 .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 800px;
 }
 
-h1 {
+.hero-title {
     font-size: 3rem;
     font-weight: bold;
+    margin-bottom: 2rem;
 }
 
-p {
-    margin-top: 10px;
-    font-size: 1.2rem;
+.hero-list {
+    list-style: none;
+    padding: 0;
 }
 
-.buttons {
-    margin-top: 40px;
-}
-
-.buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    border: 2px solid #fff;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.buttons button:hover {
-    background-color: #25D366;
-    color: rgb(255, 255, 255);
-}
-
-/* Botón activo de idioma */
-.active-lang {
-    background-color: #00ffcc;
-    color: #333;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-    animation: none !important;
-    /* Desactiva la animación pulsante */
-}
-
-/* Imagen normal */
-.ChangeLanguage img {
-    transition: all 0.3s ease;
-}
-
-/* Imagen en hover */
-.ChangeLanguage button:hover img {
-    height: var(--sz-text);
-    width: var(--sz-text);
-    top: calc(var(--gen-sz)/2);
-    left: calc(var(--sz-text)/4);
-}
-
-/* Imagen cuando el botón está activo */
-.active-lang img {
-    height: var(--sz-text);
-    width: var(--sz-text);
-    top: calc(var(--gen-sz)/2);
-    left: calc(var(--sz-text)/4);
-    filter: brightness(1.1);
-    animation: none !important;
-    /* Desactiva cualquier animación */
-}
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    background-color: #1ebe5d;
-}
-
-.seccion-info {
-    background-color: #f5f5f5;
-    padding: 40px;
-}
-
-.contenedor-limite {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.info-con-fondo {
-    background-image: url('../Img/mujer2.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* ← Esto hace que el fondo se quede fijo */
-    color: white;
-    border-radius: 12px;
-    position: relative;
-    min-height: 400px;
+.hero-list li {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
 }
 
-.contenido-texto {
-    max-width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 120px;
-    border-radius: 8px;
-}
-
-.boton {
+.cta-button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: white;
-    color: #3c3e41;
+    padding: 12px 30px;
+    border: 2px solid #fff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.boton:hover {
-    background-color: #e0e0e0;
-}
-
-.EstamosParaAyudarte_Titulo {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.categories-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    transition: background 0.3s;
     margin-top: 2rem;
 }
 
-.category-container {
+.cta-button:hover {
+    background-color: var(--brand-accent);
+    border-color: var(--brand-accent);
+}
+
+/* --- Quote --- */
+.quote-section {
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* --- Servicios --- */
+.services-section {
+    background-color: var(--bg-light);
+    padding: 5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(to right, #4e5b64, #597b94);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.icon-circle i { color: white; font-size: 30px; }
+
+.service-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem; }
+.service-desc { color: #555; font-size: 0.95rem; line-height: 1.5; }
+
+/* --- Banner CTA (Mujer) - CORREGIDO --- */
+.cta-banner-section { 
+    padding: 4rem 1rem; 
+    background: #f5f5f5; 
+}
+
+.cta-card-bg {
+    /* CAMBIO CLAVE: El gradiente negro (rgba) va AQUÍ, mezclado con la imagen */
+    /* Esto hace que el "fonsito gris" cubra el 100% de la imagen */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../Img/mujer2.png') center center / cover no-repeat fixed;
+    
+    border-radius: 12px;
+    min-height: 400px;
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    padding: 4rem; /* Más espacio interno */
+}
+
+.cta-content-box {
+    /* Eliminamos el fondo de la caja de texto porque ya lo tiene la imagen entera */
+    background-color: transparent; 
+    padding: 0; /* Ya no necesitamos padding extra aquí */
+    color: white;
+    max-width: 800px; /* Limita el ancho del texto para que se lea bien */
+}
+
+/* Ajuste opcional para el título dentro del banner */
+.cta-title { 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    margin-bottom: 1.5rem; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para que resalte más */
+}
+
+.btn-white:hover { background: #e0e0e0; }
+
+/* --- Categorías --- */
+.categories-section { padding: 4rem 2rem; }
+.section-heading { font-size: 2rem; font-weight: bold; margin-bottom: 3rem; }
+.categories-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+
+.category-item {
     position: relative;
     width: 230px;
     height: 230px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.category-container:hover {
-    transform: scale(1.05);
-}
+.category-item:hover { transform: scale(1.05); }
+.category-item img { width: 100%; height: 100%; object-fit: cover; }
 
-.category-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.overlay2 {
+.cat-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.3rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: bold; font-size: 1.3rem;
+    opacity: 0; transition: opacity 0.3s;
 }
 
-.category-container:hover .overlay2 {
-    opacity: 1;
+.category-item:hover .cat-overlay { opacity: 1; }
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center; padding: 2rem;
+    background-color: #f2f2f2; color: #555; font-size: 0.9rem;
 }
+
+.whatsapp-float {
+    position: fixed; bottom: 20px; right: 20px;
+    background-color: var(--brand-accent); color: white;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-decoration: none; transition: transform 0.3s;
+}
+
+.whatsapp-float:hover { transform: scale(1.1); }

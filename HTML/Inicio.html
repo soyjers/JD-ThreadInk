@@ -18,75 +18,148 @@
             <a href="./contacto.html" class="nav-item" data-i18n="nav_contact">Contacto</a>
         </div>
         <div class="language-switcher">
-            <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" class="lang-flag"><span class="lang-text">EN</span></button>
-            <button onclick="setLanguage('es')" class="lang-btn"><img src="../Img/COL.avif" class="lang-flag"><span class="lang-text">ES</span></button>
+            <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" alt="EN"></button>
+            <button onclick="setLanguage('es')" class="lang-btn"><img src="../Img/COL.avif" alt="ES"></button>
         </div>
     </nav>
 
     <header class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title" data-i18n="hero_title">PERSONALIZACIÓN PREMIUM</h1>
-            <ul class="hero-list">
-                <li data-i18n="hero_list_1">Bordados de Alta Calidad</li>
-                <li data-i18n="hero_list_2">Estampados Duraderos</li>
-                <li data-i18n="hero_list_3">Diseños Exclusivos</li>
-                <li data-i18n="hero_list_4">Envíos a todo USA</li>
-            </ul>
-            <a href="./contacto.html" class="cta-hero-btn" data-i18n="hero_cta">CONTÁCTANOS</a>
+        <div class="hero-content fade-in-up">
+            <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem;" data-i18n="hero_title">PERSONALIZACIÓN TEXTIL</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 2rem;" data-i18n="hero_sub">Expertos en bordados y estampados.</p>
+            <a href="./contacto.html" class="btn-primary" style="border-color: white;" data-i18n="hero_cta">COTIZAR AHORA</a>
         </div>
     </header>
 
-    <section class="quote-section">
-        <h2 class="quote-text" data-i18n="quote_text">Tu marca merece ser vista. Nosotros la hacemos inolvidable.</h2>
+    <section style="padding: 5rem 2rem; text-align: center; background: white;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #333;" data-i18n="intro_title">Llevamos tu imagen al siguiente nivel</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #555;" data-i18n="intro_text">
+                Texto de introducción profesional...
+            </p>
+        </div>
     </section>
 
-    <section class="services-section">
-        <article class="service-card">
-            <div class="icon-circle"><i class="fa-solid fa-star"></i></div>
-            <h3 class="service-title" data-i18n="serv_1_title">Calidad Garantizada</h3>
-            <p data-i18n="serv_1_desc">Usamos los mejores hilos y telas del mercado.</p>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><i class="fa-solid fa-shirt"></i></div>
-            <h3 class="service-title" data-i18n="serv_2_title">Ropa Personalizada</h3>
-            <p data-i18n="serv_2_desc">Camisetas, gorras, hoodies y más.</p>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><i class="fa-solid fa-scissors"></i></div>
-            <h3 class="service-title" data-i18n="serv_3_title">Atención al Detalle</h3>
-            <p data-i18n="serv_3_desc">Cada puntada cuenta una historia.</p>
-        </article>
-    </section>
-
-    <section class="cta-banner-section">
-        <div class="cta-card-bg">
-            <div class="cta-content-box">
-                <h2 class="cta-title" data-i18n="cta_banner_title">Estamos para ayudarte</h2>
-                <p data-i18n="cta_banner_desc_1">Tenemos la experiencia y tecnología para cumplir con los más altos estándares.</p>
-                <p class="font-bold" style="margin-top:10px; font-weight:700;" data-i18n="cta_banner_desc_2">¿Tienes alguna inquietud?</p>
-                <a href="./contacto.html" class="btn-green-solid" data-i18n="cta_banner_btn">¡CONTÁCTANOS!</a>
+    <section style="padding: 4rem 2rem; background: #f4f4f4; text-align: center;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;" data-i18n="why_title">¿Por qué elegirnos?</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+            <div style="background: white; padding: 2rem; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <i class="fa-solid fa-microchip" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                <h3 data-i18n="why_1_title">Tecnología</h3>
+                <p data-i18n="why_1_desc">Maquinaria de última generación.</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <i class="fa-solid fa-gem" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                <h3 data-i18n="why_2_title">Materiales</h3>
+                <p data-i18n="why_2_desc">Hilos y telas premium.</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <i class="fa-solid fa-handshake" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
+                <h3 data-i18n="why_3_title">Asesoría</h3>
+                <p data-i18n="why_3_desc">Acompañamiento completo.</p>
             </div>
         </div>
     </section>
 
-    <section class="categories-section">
-        <h2 style="font-size:2rem; font-weight:700; margin-bottom:3rem;" data-i18n="cat_title">Categorías</h2>
-        <div class="categories-grid">
-            <div class="category-item"><img src="../Img/Camisa.png"><div class="cat-overlay" data-i18n="cat_1">Camisas</div></div>
-            <div class="category-item"><img src="../Img/chaqueta.png"><div class="cat-overlay" data-i18n="cat_2">Chaquetas</div></div>
-            <div class="category-item"><img src="../Img/Hoodie.png"><div class="cat-overlay" data-i18n="cat_3">Hoodies</div></div>
-            <div class="category-item"><img src="../Img/gorra.png"><div class="cat-overlay" data-i18n="cat_4">Gorras</div></div>
-            <div class="category-item"><img src="../Img/camiseta.png"><div class="cat-overlay" data-i18n="cat_5">Camisetas</div></div>
-            <div class="category-item"><img src="../Img/ChaquetaDeCuero.png"><div class="cat-overlay" data-i18n="cat_6">Cuero</div></div>
+    <section style="padding: 5rem 2rem; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 3rem;" data-i18n="serv_title">Nuestros Servicios</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;">
+            <div style="width: 300px;">
+                <div style="width: 80px; height: 80px; background: #333; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;"><i class="fa-solid fa-layer-group"></i></div>
+                <h3 data-i18n="serv_1_title">Bordado</h3>
+                <p data-i18n="serv_1_desc">Descripción.</p>
+            </div>
+            <div style="width: 300px;">
+                <div style="width: 80px; height: 80px; background: #333; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;"><i class="fa-solid fa-print"></i></div>
+                <h3 data-i18n="serv_2_title">Estampado</h3>
+                <p data-i18n="serv_2_desc">Descripción.</p>
+            </div>
+            <div style="width: 300px;">
+                <div style="width: 80px; height: 80px; background: #333; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3 data-i18n="serv_3_title">Diseño</h3>
+                <p data-i18n="serv_3_desc">Descripción.</p>
+            </div>
         </div>
     </section>
 
-    <footer class="main-footer">
-        <p data-i18n="footer_text">&copy; 2025 JD ThreadInk. Todos los derechos reservados.</p>
-    </footer>
+    <section class="cta-banner-section" style="padding: 4rem 2rem; background: #f8f9fa;">
+        <div class="cta-card-bg" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/mujer2.png') center/cover fixed; padding: 4rem; border-radius: 20px; color: white; text-align: center;">
+            <h2 style="font-size: 2.5rem;" data-i18n="cta_banner_title">¿Listo?</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0;" data-i18n="cta_banner_desc">Descripción</p>
+            <p style="font-weight: bold; margin-bottom: 2rem;" data-i18n="cta_banner_sub">Subtítulo</p>
+            <a href="./contacto.html" class="btn-primary" style="background: white; color: black !important; border-color: white;" data-i18n="cta_banner_btn">CONTACTAR</a>
+        </div>
+    </section>
 
-    <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-    <script src="../JS/Idioma.js"></script>
-</body>
+    <section class="categories-section reveal" style="padding: 5rem 2rem; text-align: center;">
+      <h2 style="font-size: 2rem; margin-bottom: 3rem;" data-i18n="cat_title">Categorías</h2>
+      
+      <div class="categories-grid">
+          <div class="category-item">
+              <img src="../Img/Camisa.png">
+              <div class="cat-overlay">
+                  <span class="cat-title-text" data-i18n="cat_1">Camisas</span>
+                  <p class="cat-desc-text" data-i18n="cat_desc_1">Elegancia corporativa y uniformes de alto perfil.</p>
+              </div>
+          </div>
+          <div class="category-item">
+              <img src="../Img/chaqueta.png">
+              <div class="cat-overlay">
+                  <span class="cat-title-text" data-i18n="cat_2">Chaquetas</span>
+                  <p class="cat-desc-text" data-i18n="cat_desc_2">Protección y estilo con bordados resistentes.</p>
+              </div>
+          </div>
+          <div class="category-item">
+              <img src="../Img/Hoodie.png">
+              <div class="cat-overlay">
+                  <span class="cat-title-text" data-i18n="cat_3">Hoodies</span>
+                  <p class="cat-desc-text" data-i18n="cat_desc_3">Comodidad urbana para tu marca o equipo.</p>
+              </div>
+          </div>
+          <div class="category-item">
+              <img src="../Img/gorra.png">
+              <div class="cat-overlay">
+                  <span class="cat-title-text" data-i18n="cat_4">Gorras</span>
+                  <p class="cat-desc-text" data-i18n="cat_desc_4">Tu logo en lo más alto, con relieve 3D.</p>
+              </div>
+          </div>
+          <div class="category-item">
+              <img src="../Img/camiseta.png">
+              <div class="cat-overlay">
+                  <span class="cat-title-text" data-i18n="cat_5">Camisetas</span>
+                  <p class="cat-desc-text" data-i18n="cat_desc_5">Impresión DTF de alta definición y duración.</p>
+              </div>
+          </div>
+          <div class="category-item">
+              <img src="../Img/ChaquetaDeCuero.png">
+              <div class="cat-overlay">
+                  <span class="cat-title-text" data-i18n="cat_6">Cuero</span>
+                  <p class="cat-desc-text" data-i18n="cat_desc_6">Acabados premium para materiales exigentes.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+ 
+  <section class="product-gallery-section reveal">
+      </section>
+
+  <footer class="main-footer reveal">
+      <p data-i18n="footer_text">© 2025 JD ThreadInk. Todos los derechos reservados.</p>
+      
+  </footer>
+
+  <a href="https://www.instagram.com/" target="_blank" class="instagram-float">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <div id="lightbox" class="lightbox-modal">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-img" id="lightbox-img" src="">
+  </div>
+
+  <script src="../JS/Idioma.js"></script>
+  <script src="../JS/Efectos.js"></script> </body>
 </html>
+

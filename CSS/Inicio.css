@@ -2,17 +2,17 @@
    1. VARIABLES Y BASE GLOBAL
    ========================================= */
    :root {
-    --brand-dark: #333;
-    --brand-green: #25D366; /* EL VERDE DE WHATSAPP */
+    --brand-dark: #222; /* Negro suave para textos */
+    --brand-black: #000; /* Negro puro para botones */
     --brand-blue: #0077cc;
-    --brand-bg: #f6f7f8;
+    --bg-light: #f8f9fa;
     --font-main: 'Quicksand', sans-serif;
 }
 
 body {
     font-family: var(--font-main);
     margin: 0; padding: 0;
-    background-color: var(--brand-bg);
+    background-color: var(--bg-light);
     display: flex; flex-direction: column;
     min-height: 100vh;
 }
@@ -20,209 +20,163 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; margin: 0; }
 
 /* =========================================
-   2. NAVEGACIÓN (Global)
+   2. BOTONES UNIFICADOS (Estándar Profesional)
+   ========================================= */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: var(--brand-black); /* NEGRO ELEGANTE UNIFICADO */
+    color: white !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    border: 2px solid var(--brand-black);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--brand-black) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   3. NAVEGACIÓN
    ========================================= */
 .main-nav {
     background-color: #fff;
     display: flex; justify-content: space-between; align-items: center;
     padding: 10px 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     position: sticky; top: 0; z-index: 1000;
 }
-.nav-logo img { width: 140px; display: block; }
-.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-logo img { width: 130px; display: block; }
+.nav-links { display: flex; gap: 25px; align-items: center; }
 .nav-item {
-    font-size: 1.1rem; font-weight: 600; padding: 8px 16px;
-    border-radius: 8px; transition: all 0.3s ease; color: var(--brand-dark);
+    font-size: 1rem; font-weight: 600; padding: 8px 12px;
+    color: var(--brand-dark); transition: color 0.3s;
 }
-.nav-item:hover, .nav-item.active { color: var(--brand-blue); background-color: rgba(0,0,0,0.03); }
+.nav-item:hover, .nav-item.active { color: var(--brand-blue); }
 
-/* --- ESTILOS DEL SELECTOR DE IDIOMA --- */
-.language-switcher {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
+/* Selector de Idioma */
+.language-switcher { display: flex; gap: 10px; }
 .lang-btn {
-    position: relative;
-    width: 45px;
-    height: 45px;
-    background-color: #000;
-    border: 2px solid transparent; /* Borde transparente por defecto */
-    border-radius: 12px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
-    opacity: 0.6; /* Un poco apagado cuando no está activo */
-    filter: grayscale(80%); /* Blanco y negro cuando inactivo (opcional) */
+    width: 40px; height: 40px; border-radius: 8px; border: none;
+    overflow: hidden; cursor: pointer; opacity: 0.6;
+    transition: all 0.3s; padding: 0;
 }
+.lang-btn.active-lang { opacity: 1; transform: scale(1.15); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.lang-btn img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ESTADO ACTIVO (El truco que pediste) */
-.lang-btn.active-lang {
-    transform: scale(1.25); /* Crece un 25% */
-    border-color: var(--brand-green); /* Borde verde marca (o usa #0077cc azul) */
-    opacity: 1; /* Totalmente visible */
-    filter: grayscale(0%); /* A todo color */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Sombra elegante */
-    z-index: 10; /* Se pone por encima del otro */
-}
-
-.lang-btn:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
-.lang-flag {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-}
-
-.lang-text {
-    position: relative; z-index: 2;
-    color: white; font-weight: 800;
+/* =========================================
+   4. BURBUJA FLOTANTE (INSTAGRAM)
+   ========================================= */
+.instagram-float {
+    position: fixed; bottom: 25px; right: 25px;
+    /* Degradado oficial de Instagram */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    width: 65px; height: 65px; border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
-    height: 100%; font-size: 0.85rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,1);
+    font-size: 32px; z-index: 2000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
 }
+.instagram-float:hover { transform: scale(1.1) rotate(10deg); }
 
 /* =========================================
-   3. HERO SECTION (Inicio)
+   5. FOOTER
    ========================================= */
+.main-footer {
+    text-align: center; padding: 2rem; background: #fff;
+    color: #777; margin-top: auto; border-top: 1px solid #eee;
+}
+
+/* Animaciones */
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Estilos específicos de Home para no romper nada */
 .hero-section {
-    position: relative; height: 90vh;
-    background: url('../Img/FondoImg.png') center/cover no-repeat;
-    display: flex; align-items: center; padding: 0 5%; color: white;
+    height: 90vh; background: url('../Img/FondoImg.png') center/cover;
+    display: flex; align-items: center; padding: 0 5%; color: white; position: relative;
 }
-.hero-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5); z-index: 1;
-}
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
 .hero-content { position: relative; z-index: 2; max-width: 800px; }
-.hero-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 2rem; line-height: 1.1; }
-.hero-list li { font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
-
-/* Botón Hero (Borde Blanco) */
-.cta-hero-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin-top: 2rem; padding: 12px 35px;
-    background: transparent; 
-    border: 2px solid #fff; /* Borde visible */
-    color: white; font-weight: 700; border-radius: 5px;
-    font-size: 1.1rem; transition: all 0.3s;
-    cursor: pointer;
-}
-.cta-hero-btn:hover {
-    background: var(--brand-green); 
-    border-color: var(--brand-green);
-    transform: translateY(-2px);
-}
-
-/* =========================================
-   4. SECCIONES INTERNAS (Inicio)
-   ========================================= */
-.quote-section { padding: 5rem 2rem; background: white; text-align: center; }
-.quote-text { max-width: 900px; margin: 0 auto; line-height: 1.6; font-size: 1.3rem; color: #444; }
-
-/* Servicios Grid */
-.services-section {
-    padding: 5rem 2rem; display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem; text-align: center;
-}
-.icon-circle {
-    width: 80px; height: 80px; margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, #4e5b64, #597b94);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 2rem; color: white;
-}
-.service-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
-
-/* =========================================
-   5. BANNER MUJER (EL BOTÓN VERDE)
-   ========================================= */
-.cta-banner-section { padding: 4rem 2rem; }
-.cta-card-bg {
-    /* Fondo Oscuro sobre la imagen */
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('../Img/mujer2.png') center/cover no-repeat fixed;
-    border-radius: 20px;
-    min-height: 450px;
-    display: flex; align-items: center;
-    padding: 4rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-.cta-content-box { color: white; max-width: 600px; }
-.cta-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
-
-/* ESTE ES EL BOTÓN VERDE */
-.btn-green-solid {
-    display: inline-block; margin-top: 2rem;
-    padding: 15px 40px;
-    background-color: var(--brand-green) !important; /* FORZAMOS VERDE */
-    color: white !important;
-    font-weight: 800; letter-spacing: 1px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-    transition: transform 0.2s, background 0.2s;
-    border: none;
-}
-.btn-green-solid:hover {
-    background-color: #1ebe5d !important;
-    transform: translateY(-3px);
-}
-
-/* =========================================
-   6. CATEGORÍAS & FOOTER
-   ========================================= */
-.categories-section { padding: 4rem 2rem; text-align: center; }
 .categories-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.category-item {
-    width: 220px; height: 220px; border-radius: 50%;
-    overflow: hidden; position: relative; cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;
-}
-.category-item:hover { transform: scale(1.1); }
+.category-item { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; position: relative; }
 .category-item img { width: 100%; height: 100%; object-fit: cover; }
 .cat-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5); color: white;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: bold; font-size: 1.2rem; opacity: 0; transition: opacity 0.3s;
+    position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);
+    display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; opacity:0; transition:0.3s;
 }
 .category-item:hover .cat-overlay { opacity: 1; }
 
-.main-footer {
-    text-align: center; padding: 2rem; background: white;
-    color: #666; margin-top: auto; border-top: 1px solid #eee;
-}
-.whatsapp-float {
-    position: fixed; bottom: 20px; right: 20px;
-    background-color: var(--brand-green); color: white;
-    width: 60px; height: 60px; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 30px; z-index: 2000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s;
-}
-.whatsapp-float:hover { transform: scale(1.1); }
+/* =========================================
+   6. NUEVAS MEJORAS (Lightbox & Categorías Pro)
+   ========================================= */
 
-
-/* Animación de entrada suave (Fade In Up) */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* --- CATEGORÍAS PROFESIONALES (Inicio) --- */
+.category-item .cat-overlay {
+    flex-direction: column; /* Texto uno debajo de otro */
+    justify-content: flex-end; /* Texto abajo */
+    padding-bottom: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); /* Degradado elegante */
+    transform: translateY(20px); /* Efecto de entrada */
+    transition: all 0.4s ease;
 }
 
-/* Clase utilitaria para aplicar la animación */
-.fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+.category-item:hover .cat-overlay {
+    transform: translateY(0);
 }
+
+/* Título de la categoría */
+.cat-title-text {
+    font-size: 1.5rem; text-transform: uppercase; margin-bottom: 5px; color: white;
+}
+
+/* Descripción oculta que aparece */
+.cat-desc-text {
+    font-size: 0.9rem; font-weight: 400; color: #ddd; 
+    max-width: 80%; margin: 0 auto; opacity: 0; transform: translateY(10px);
+    transition: all 0.4s ease 0.1s; /* Retraso ligero */
+}
+
+.category-item:hover .cat-desc-text {
+    opacity: 1; transform: translateY(0);
+}
+
+/* --- LIGHTBOX (Ventana Modal para Galería) --- */
+.lightbox-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); /* Fondo casi negro */
+    z-index: 10000; display: none; /* Oculto por defecto */
+    justify-content: center; align-items: center; flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-modal.active { display: flex; }
+
+.lightbox-img {
+    max-width: 90%; max-height: 80vh;
+    border-radius: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 2px solid white;
+}
+
+.lightbox-close {
+    position: absolute; top: 30px; right: 40px;
+    color: white; font-size: 3rem; cursor: pointer;
+    transition: transform 0.3s;
+}
+.lightbox-close:hover { transform: rotate(90deg); color: var(--brand-blue); }
+
+/* --- ANIMACIÓN SCROLL (Para que todo aparezca al bajar) --- */
+.reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active { opacity: 1; transform: translateY(0); }

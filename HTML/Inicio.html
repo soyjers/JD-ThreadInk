@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JD ThreadInk - Inicio</title>
+    <title data-i18n="title">JD ThreadInk - Inicio</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../CSS/Inicio.css">
@@ -11,155 +12,144 @@
 <body>
 
     <nav class="main-nav">
-        <a href="./Inicio.html" class="nav-logo"><img src="../Img/logoCompleto.png" alt="Logo"></a>
+        <a href="./Inicio.html" class="nav-logo"><img src="../Img/logoCompleto.png" alt="JD ThreadInk Logo"></a>
         <div class="nav-links">
             <a href="./Inicio.html" class="nav-item active" data-i18n="nav_home">Inicio</a>
             <a href="./SobreNosotros.html" class="nav-item" data-i18n="nav_about">Sobre Nosotros</a>
             <a href="./contacto.html" class="nav-item" data-i18n="nav_contact">Contacto</a>
         </div>
         <div class="language-switcher">
-            <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" alt="EN"></button>
-            <button onclick="setLanguage('es')" class="lang-btn"><img src="../Img/COL.avif" alt="ES"></button>
+            <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" alt="English"></button>
+            <button onclick="setLanguage('es')" class="lang-btn"><img src="../Img/COL.avif" alt="Español"></button>
         </div>
     </nav>
 
     <header class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content fade-in-up">
-            <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem;" data-i18n="hero_title">PERSONALIZACIÓN TEXTIL</h1>
-            <p style="font-size: 1.5rem; margin-bottom: 2rem;" data-i18n="hero_sub">Expertos en bordados y estampados.</p>
-            <a href="./contacto.html" class="btn-primary" style="border-color: white;" data-i18n="hero_cta">COTIZAR AHORA</a>
+            <h1 class="hero-title" data-i18n="hero_title">PERSONALIZACIÓN TEXTIL DE ALTO NIVEL</h1>
+            <p class="hero-subtitle" data-i18n="hero_sub">Expertos en bordados y estampados que marcan la diferencia.</p>
+            <a href="./contacto.html" class="btn-primary btn-hero" data-i18n="hero_cta">COTIZAR AHORA</a>
         </div>
     </header>
 
-    <section style="padding: 5rem 2rem; text-align: center; background: white;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #333;" data-i18n="intro_title">Llevamos tu imagen al siguiente nivel</h2>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #555;" data-i18n="intro_text">
-                Texto de introducción profesional...
+    <section class="intro-section reveal">
+        <div class="container-narrow">
+            <h2 class="section-title" data-i18n="intro_title">Llevamos tu imagen al siguiente nivel</h2>
+            <p class="section-desc" data-i18n="intro_text">
+                En JD ThreadInk no solo personalizamos prendas, creamos identidad. Con años de experiencia en el mercado americano, fusionamos tecnología de punta con artesanía detallada para entregar productos que superan expectativas.
             </p>
         </div>
     </section>
 
-    <section style="padding: 4rem 2rem; background: #f4f4f4; text-align: center;">
-        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;" data-i18n="why_title">¿Por qué elegirnos?</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-            <div style="background: white; padding: 2rem; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                <i class="fa-solid fa-microchip" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
-                <h3 data-i18n="why_1_title">Tecnología</h3>
-                <p data-i18n="why_1_desc">Maquinaria de última generación.</p>
+    <section class="why-us-section reveal">
+        <h2 class="section-title" data-i18n="why_title">¿Por qué elegirnos?</h2>
+        <div class="features-grid">
+            <article class="feature-card">
+                <i class="fa-solid fa-microchip feature-icon"></i>
+                <h3 data-i18n="why_1_title">Tecnología de Punta</h3>
+                <p data-i18n="why_1_desc">Utilizamos maquinaria de última generación para acabados precisos.</p>
+            </article>
+            <article class="feature-card">
+                <i class="fa-solid fa-gem feature-icon"></i>
+                <h3 data-i18n="why_2_title">Materiales Premium</h3>
+                <p data-i18n="why_2_desc">Hilos y telas seleccionados para garantizar durabilidad.</p>
+            </article>
+            <article class="feature-card">
+                <i class="fa-solid fa-handshake feature-icon"></i>
+                <h3 data-i18n="why_3_title">Asesoría Experta</h3>
+                <p data-i18n="why_3_desc">Te acompañamos desde el diseño hasta el producto final.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="services-home-section reveal">
+        <h2 class="section-title" data-i18n="serv_title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon-circle"><i class="fa-solid fa-layer-group"></i></div>
+                <h3 data-i18n="serv_1_title">Bordado Computarizado</h3>
+                <p data-i18n="serv_1_desc">Ideal para uniformes, gorras y marcas que buscan elegancia y relieve duradero.</p>
             </div>
-            <div style="background: white; padding: 2rem; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                <i class="fa-solid fa-gem" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
-                <h3 data-i18n="why_2_title">Materiales</h3>
-                <p data-i18n="why_2_desc">Hilos y telas premium.</p>
+            <div class="service-item">
+                <div class="service-icon-circle"><i class="fa-solid fa-print"></i></div>
+                <h3 data-i18n="serv_2_title">Estampado DTF & Vinil</h3>
+                <p data-i18n="serv_2_desc">Colores vibrantes y diseños complejos plasmados con la mejor tecnología.</p>
             </div>
-            <div style="background: white; padding: 2rem; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                <i class="fa-solid fa-handshake" style="font-size: 2.5rem; color: #333; margin-bottom: 1rem;"></i>
-                <h3 data-i18n="why_3_title">Asesoría</h3>
-                <p data-i18n="why_3_desc">Acompañamiento completo.</p>
+            <div class="service-item">
+                <div class="service-icon-circle"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3 data-i18n="serv_3_title">Diseño Personalizado</h3>
+                <p data-i18n="serv_3_desc">Digitalizamos tu logo y adaptamos tus ideas a cualquier tipo de prenda.</p>
             </div>
         </div>
     </section>
 
-    <section style="padding: 5rem 2rem; text-align: center;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 3rem;" data-i18n="serv_title">Nuestros Servicios</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;">
-            <div style="width: 300px;">
-                <div style="width: 80px; height: 80px; background: #333; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;"><i class="fa-solid fa-layer-group"></i></div>
-                <h3 data-i18n="serv_1_title">Bordado</h3>
-                <p data-i18n="serv_1_desc">Descripción.</p>
+    <section class="cta-full-width reveal">
+        <div class="cta-content">
+            <h2 class="cta-title" data-i18n="cta_banner_title">¿Listo para destacar?</h2>
+            <p data-i18n="cta_banner_desc">Ya sea para tu empresa, tu equipo o tu marca de ropa, tenemos la solución perfecta para ti.</p>
+            <p class="cta-sub" data-i18n="cta_banner_sub">Calidad garantizada en cada pedido.</p>
+            <a href="./contacto.html" class="btn-primary btn-hero" data-i18n="cta_banner_btn">CONTACTAR ASESOR</a>
+        </div>
+    </section>
+
+    <section class="categories-section reveal">
+        <h2 class="section-title" data-i18n="cat_title">Categorías Destacadas</h2>
+        <div class="categories-grid">
+            <div class="category-item">
+                <img src="../Img/Camisa.png" loading="lazy">
+                <div class="cat-overlay">
+                    <span class="cat-title-text" data-i18n="cat_1">Camisas</span>
+                    <p class="cat-desc-text" data-i18n="cat_desc_1">Elegancia corporativa y uniformes de alto perfil.</p>
+                </div>
             </div>
-            <div style="width: 300px;">
-                <div style="width: 80px; height: 80px; background: #333; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;"><i class="fa-solid fa-print"></i></div>
-                <h3 data-i18n="serv_2_title">Estampado</h3>
-                <p data-i18n="serv_2_desc">Descripción.</p>
+            <div class="category-item">
+                <img src="../Img/chaqueta.png" loading="lazy">
+                <div class="cat-overlay">
+                    <span class="cat-title-text" data-i18n="cat_2">Chaquetas</span>
+                    <p class="cat-desc-text" data-i18n="cat_desc_2">Protección y estilo con bordados resistentes.</p>
+                </div>
             </div>
-            <div style="width: 300px;">
-                <div style="width: 80px; height: 80px; background: #333; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;"><i class="fa-solid fa-pen-nib"></i></div>
-                <h3 data-i18n="serv_3_title">Diseño</h3>
-                <p data-i18n="serv_3_desc">Descripción.</p>
+            <div class="category-item">
+                <img src="../Img/Hoodie.png" loading="lazy">
+                <div class="cat-overlay">
+                    <span class="cat-title-text" data-i18n="cat_3">Hoodies</span>
+                    <p class="cat-desc-text" data-i18n="cat_desc_3">Comodidad urbana para tu marca o equipo.</p>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/gorra.png" loading="lazy">
+                <div class="cat-overlay">
+                    <span class="cat-title-text" data-i18n="cat_4">Gorras</span>
+                    <p class="cat-desc-text" data-i18n="cat_desc_4">Tu logo en lo más alto, con relieve 3D.</p>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/camiseta.png" loading="lazy">
+                <div class="cat-overlay">
+                    <span class="cat-title-text" data-i18n="cat_5">Camisetas</span>
+                    <p class="cat-desc-text" data-i18n="cat_desc_5">Impresión DTF de alta definición y duración.</p>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="../Img/ChaquetaDeCuero.png" loading="lazy">
+                <div class="cat-overlay">
+                    <span class="cat-title-text" data-i18n="cat_6">Cuero</span>
+                    <p class="cat-desc-text" data-i18n="cat_desc_6">Acabados premium para materiales exigentes.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-banner-section" style="padding: 4rem 2rem; background: #f8f9fa;">
-        <div class="cta-card-bg" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/mujer2.png') center/cover fixed; padding: 4rem; border-radius: 20px; color: white; text-align: center;">
-            <h2 style="font-size: 2.5rem;" data-i18n="cta_banner_title">¿Listo?</h2>
-            <p style="font-size: 1.2rem; margin: 1rem 0;" data-i18n="cta_banner_desc">Descripción</p>
-            <p style="font-weight: bold; margin-bottom: 2rem;" data-i18n="cta_banner_sub">Subtítulo</p>
-            <a href="./contacto.html" class="btn-primary" style="background: white; color: black !important; border-color: white;" data-i18n="cta_banner_btn">CONTACTAR</a>
-        </div>
-    </section>
+    <footer class="main-footer reveal">
+        <p data-i18n="footer_text">© 2025 JD ThreadInk. Todos los derechos reservados.</p>
+    </footer>
 
-    <section class="categories-section reveal" style="padding: 5rem 2rem; text-align: center;">
-      <h2 style="font-size: 2rem; margin-bottom: 3rem;" data-i18n="cat_title">Categorías</h2>
-      
-      <div class="categories-grid">
-          <div class="category-item">
-              <img src="../Img/Camisa.png">
-              <div class="cat-overlay">
-                  <span class="cat-title-text" data-i18n="cat_1">Camisas</span>
-                  <p class="cat-desc-text" data-i18n="cat_desc_1">Elegancia corporativa y uniformes de alto perfil.</p>
-              </div>
-          </div>
-          <div class="category-item">
-              <img src="../Img/chaqueta.png">
-              <div class="cat-overlay">
-                  <span class="cat-title-text" data-i18n="cat_2">Chaquetas</span>
-                  <p class="cat-desc-text" data-i18n="cat_desc_2">Protección y estilo con bordados resistentes.</p>
-              </div>
-          </div>
-          <div class="category-item">
-              <img src="../Img/Hoodie.png">
-              <div class="cat-overlay">
-                  <span class="cat-title-text" data-i18n="cat_3">Hoodies</span>
-                  <p class="cat-desc-text" data-i18n="cat_desc_3">Comodidad urbana para tu marca o equipo.</p>
-              </div>
-          </div>
-          <div class="category-item">
-              <img src="../Img/gorra.png">
-              <div class="cat-overlay">
-                  <span class="cat-title-text" data-i18n="cat_4">Gorras</span>
-                  <p class="cat-desc-text" data-i18n="cat_desc_4">Tu logo en lo más alto, con relieve 3D.</p>
-              </div>
-          </div>
-          <div class="category-item">
-              <img src="../Img/camiseta.png">
-              <div class="cat-overlay">
-                  <span class="cat-title-text" data-i18n="cat_5">Camisetas</span>
-                  <p class="cat-desc-text" data-i18n="cat_desc_5">Impresión DTF de alta definición y duración.</p>
-              </div>
-          </div>
-          <div class="category-item">
-              <img src="../Img/ChaquetaDeCuero.png">
-              <div class="cat-overlay">
-                  <span class="cat-title-text" data-i18n="cat_6">Cuero</span>
-                  <p class="cat-desc-text" data-i18n="cat_desc_6">Acabados premium para materiales exigentes.</p>
-              </div>
-          </div>
-      </div>
-  </section>
+    <a href="https://www.instagram.com/jd_threadink?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-float">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
- 
-  <section class="product-gallery-section reveal">
-      </section>
-
-  <footer class="main-footer reveal">
-      <p data-i18n="footer_text">© 2025 JD ThreadInk. Todos los derechos reservados.</p>
-      
-  </footer>
-
-  <a href="https://www.instagram.com/" target="_blank" class="instagram-float">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-
-  <div id="lightbox" class="lightbox-modal">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-img" id="lightbox-img" src="">
-  </div>
-
-  <script src="../JS/Idioma.js"></script>
-  <script src="../JS/Efectos.js"></script> </body>
+    <script src="../JS/Idioma.js"></script>
+    <script src="../JS/Efectos.js"></script>
+</body>
 </html>
-

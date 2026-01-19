@@ -2,8 +2,8 @@
    1. VARIABLES Y BASE GLOBAL
    ========================================= */
    :root {
-    --brand-dark: #222; /* Negro suave para textos */
-    --brand-black: #000; /* Negro puro para botones */
+    --brand-dark: #222;
+    --brand-black: #000;
     --brand-blue: #0077cc;
     --bg-light: #f8f9fa;
     --font-main: 'Quicksand', sans-serif;
@@ -15,17 +15,19 @@ body {
     background-color: var(--bg-light);
     display: flex; flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
+
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; margin: 0; }
 
 /* =========================================
-   2. BOTONES UNIFICADOS (Estándar Profesional)
+   2. BOTONES UNIFICADOS (Negro Elegante)
    ========================================= */
 .btn-primary {
     display: inline-block;
     padding: 14px 35px;
-    background-color: var(--brand-black); /* NEGRO ELEGANTE UNIFICADO */
+    background-color: var(--brand-black);
     color: white !important;
     font-weight: 700;
     text-transform: uppercase;
@@ -42,6 +44,15 @@ ul { list-style: none; padding: 0; margin: 0; }
     color: var(--brand-black) !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Variación para fondos oscuros (Borde blanco) */
+.btn-hero {
+    border-color: white;
+}
+.btn-hero:hover {
+    background-color: white;
+    color: black !important;
 }
 
 /* =========================================
@@ -62,121 +73,148 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .nav-item:hover, .nav-item.active { color: var(--brand-blue); }
 
-/* Selector de Idioma */
 .language-switcher { display: flex; gap: 10px; }
 .lang-btn {
     width: 40px; height: 40px; border-radius: 8px; border: none;
-    overflow: hidden; cursor: pointer; opacity: 0.6;
-    transition: all 0.3s; padding: 0;
+    overflow: hidden; cursor: pointer; opacity: 0.6; padding: 0; transition: all 0.3s;
 }
 .lang-btn.active-lang { opacity: 1; transform: scale(1.15); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 .lang-btn img { width: 100%; height: 100%; object-fit: cover; }
 
 /* =========================================
-   4. BURBUJA FLOTANTE (INSTAGRAM)
+   4. SECCIONES (Estilos Limpios)
    ========================================= */
-.instagram-float {
-    position: fixed; bottom: 25px; right: 25px;
-    /* Degradado oficial de Instagram */
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+
+/* Hero Section */
+.hero-section {
+    height: 90vh;
+    background: url('../Img/FondoImg.png') center/cover no-repeat;
+    display: flex; align-items: center;
+    padding: 0 5%;
     color: white;
-    width: 65px; height: 65px; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 32px; z-index: 2000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
+    position: relative;
 }
-.instagram-float:hover { transform: scale(1.1) rotate(10deg); }
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
+.hero-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+.hero-subtitle { font-size: 1.5rem; margin-bottom: 2rem; }
+
+/* Introducción */
+.intro-section { padding: 6rem 2rem; text-align: center; background: white; }
+.container-narrow { max-width: 800px; margin: 0 auto; }
+.section-title { font-size: 2.5rem; margin-bottom: 2rem; color: var(--brand-dark); font-weight: 800; }
+.section-desc { font-size: 1.2rem; line-height: 1.8; color: #555; }
+
+/* Por qué elegirnos */
+.why-us-section { padding: 5rem 2rem; background: #f4f4f4; text-align: center; }
+.features-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+.feature-card {
+    background: white; padding: 2.5rem 2rem; border-radius: 15px;
+    width: 280px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s;
+}
+.feature-card:hover { transform: translateY(-5px); }
+.feature-icon { font-size: 2.5rem; color: var(--brand-dark); margin-bottom: 1.5rem; }
+
+/* Servicios */
+.services-home-section { padding: 6rem 2rem; text-align: center; }
+.services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; }
+.service-item { width: 300px; }
+.service-icon-circle {
+    width: 90px; height: 90px; background: var(--brand-dark); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem; margin: 0 auto 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Banner CTA (Mujer) */
+.cta-full-width {
+    padding: 6rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/mujer2.png') center/cover fixed;
+    text-align: center; color: white; display: flex; align-items: center; justify-content: center;
+}
+.cta-content { max-width: 700px; }
+.cta-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+.cta-sub { font-weight: bold; margin-bottom: 2.5rem; font-size: 1.1rem; letter-spacing: 1px; }
 
 /* =========================================
-   5. FOOTER
+   5. CATEGORÍAS PREMIUM (Rediseño Final)
+   ========================================= */
+.categories-section { padding: 5rem 2rem; text-align: center; background-color: #fff; }
+.categories-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
+
+.category-item {
+    position: relative; width: 240px; height: 240px;
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+.category-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.category-item:hover img { transform: scale(1.15); }
+
+/* Overlay profesional */
+.cat-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end; /* Texto abajo */
+    padding-bottom: 2rem; color: white; text-align: center;
+    opacity: 1; /* Siempre visible el degradado */
+}
+
+.cat-title-text {
+    font-size: 1.5rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transform: translateY(10px); transition: transform 0.3s ease;
+}
+.category-item:hover .cat-title-text { transform: translateY(0); }
+
+.cat-desc-text {
+    font-size: 0.9rem; font-weight: 500; color: #ddd; max-width: 85%; margin: 0 auto;
+    opacity: 0; transform: translateY(20px); transition: all 0.4s ease 0.1s;
+}
+.category-item:hover .cat-desc-text { opacity: 1; transform: translateY(0); }
+
+/* =========================================
+   6. EXTRAS (Footer, Lightbox, Animaciones)
    ========================================= */
 .main-footer {
     text-align: center; padding: 2rem; background: #fff;
     color: #777; margin-top: auto; border-top: 1px solid #eee;
 }
 
-/* Animaciones */
-.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-/* Estilos específicos de Home para no romper nada */
-.hero-section {
-    height: 90vh; background: url('../Img/FondoImg.png') center/cover;
-    display: flex; align-items: center; padding: 0 5%; color: white; position: relative;
+.instagram-float {
+    position: fixed; bottom: 25px; right: 25px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white; width: 65px; height: 65px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 32px; z-index: 2000; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
 }
-.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
-.hero-content { position: relative; z-index: 2; max-width: 800px; }
-.categories-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.category-item { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; position: relative; }
-.category-item img { width: 100%; height: 100%; object-fit: cover; }
-.cat-overlay {
-    position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);
-    display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; opacity:0; transition:0.3s;
-}
-.category-item:hover .cat-overlay { opacity: 1; }
+.instagram-float:hover { transform: scale(1.1) rotate(10deg); }
 
-/* =========================================
-   6. NUEVAS MEJORAS (Lightbox & Categorías Pro)
-   ========================================= */
-
-/* --- CATEGORÍAS PROFESIONALES (Inicio) --- */
-.category-item .cat-overlay {
-    flex-direction: column; /* Texto uno debajo de otro */
-    justify-content: flex-end; /* Texto abajo */
-    padding-bottom: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); /* Degradado elegante */
-    transform: translateY(20px); /* Efecto de entrada */
-    transition: all 0.4s ease;
-}
-
-.category-item:hover .cat-overlay {
-    transform: translateY(0);
-}
-
-/* Título de la categoría */
-.cat-title-text {
-    font-size: 1.5rem; text-transform: uppercase; margin-bottom: 5px; color: white;
-}
-
-/* Descripción oculta que aparece */
-.cat-desc-text {
-    font-size: 0.9rem; font-weight: 400; color: #ddd; 
-    max-width: 80%; margin: 0 auto; opacity: 0; transform: translateY(10px);
-    transition: all 0.4s ease 0.1s; /* Retraso ligero */
-}
-
-.category-item:hover .cat-desc-text {
-    opacity: 1; transform: translateY(0);
-}
-
-/* --- LIGHTBOX (Ventana Modal para Galería) --- */
+/* Lightbox */
 .lightbox-modal {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95); /* Fondo casi negro */
-    z-index: 10000; display: none; /* Oculto por defecto */
+    background: rgba(0,0,0,0.95); z-index: 10000; display: none;
     justify-content: center; align-items: center; flex-direction: column;
     animation: fadeIn 0.3s ease;
 }
-
 .lightbox-modal.active { display: flex; }
-
 .lightbox-img {
-    max-width: 90%; max-height: 80vh;
-    border-radius: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    border: 2px solid white;
+    max-width: 90%; max-height: 80vh; border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); border: 2px solid white;
 }
-
 .lightbox-close {
-    position: absolute; top: 30px; right: 40px;
-    color: white; font-size: 3rem; cursor: pointer;
-    transition: transform 0.3s;
+    position: absolute; top: 30px; right: 40px; color: white;
+    font-size: 3rem; cursor: pointer; transition: transform 0.3s;
 }
 .lightbox-close:hover { transform: rotate(90deg); color: var(--brand-blue); }
 
-/* --- ANIMACIÓN SCROLL (Para que todo aparezca al bajar) --- */
-.reveal {
-    opacity: 0; transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
+/* Animaciones de entrada */
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }

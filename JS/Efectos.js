@@ -1,22 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. ANIMACIÓN AL SCROLL (Reveal)
-    const reveals = document.querySelectorAll('.reveal');
 
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100;
-
-        reveals.forEach((reveal) => {
-            const elementTop = reveal.getBoundingClientRect().top;
-            if (elementTop < windowHeight - elementVisible) {
-                reveal.classList.add('active');
-            }
-        });
+    // 1. ANIMACIÓN DE ENTRADA (OPTIMIZADA)
+    // Usamos IntersectionObserver para que el navegador no calcule nada hasta que el elemento sea visible.
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Se activa apenas se ve un 10% del elemento
     };
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Para activar los que ya se ven al cargar
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Deja de vigilar una vez animado (Ahorra MUCHA memoria)
+            }
+        });
+    }, observerOptions);
+
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((el) => observer.observe(el));
 
     // 2. LIGHTBOX (Galería Funcional)
     const lightbox = document.getElementById('lightbox');
@@ -24,21 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const closeBtn = document.querySelector('.lightbox-close');
 
-    if(lightbox) {
+    if (lightbox) {
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const img = item.querySelector('img');
-                if(img) {
-                    lightboxImg.src = img.src; // Copia la ruta de la imagen
+                if (img) {
+                    lightboxImg.src = img.src;
                     lightbox.classList.add('active');
                 }
             });
         });
 
-        // Cerrar al dar clic en la X o fuera de la imagen
         closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
         lightbox.addEventListener('click', (e) => {
-            if(e.target === lightbox) lightbox.classList.remove('active');
+            if (e.target === lightbox) lightbox.classList.remove('active');
         });
     }
 });

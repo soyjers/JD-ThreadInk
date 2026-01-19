@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">JD ThreadInk - Inicio</title>
+    <title>JD ThreadInk - Inicio</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../CSS/Inicio.css">
@@ -13,9 +13,9 @@
     <nav class="main-nav">
         <a href="./Inicio.html" class="nav-logo"><img src="../Img/logoCompleto.png" alt="Logo"></a>
         <div class="nav-links">
-            <a href="./Inicio.html" class="nav-item active" data-i18n="Home">Inicio</a>
-            <a href="./SobreNosotros.html" class="nav-item" data-i18n="About">Sobre Nosotros</a>
-            <a href="./contacto.html" class="nav-item" data-i18n="Contact">Contacto</a>
+            <a href="./Inicio.html" class="nav-item active" data-i18n="nav_home">Inicio</a>
+            <a href="./SobreNosotros.html" class="nav-item" data-i18n="nav_about">Sobre Nosotros</a>
+            <a href="./contacto.html" class="nav-item" data-i18n="nav_contact">Contacto</a>
         </div>
         <div class="language-switcher">
             <button onclick="setLanguage('en')" class="lang-btn"><img src="../Img/USA.jpg" class="lang-flag"><span class="lang-text">EN</span></button>
@@ -26,69 +26,67 @@
     <header class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title" data-i18n="PieDeTitulo1">Título Principal</h1>
+            <h1 class="hero-title" data-i18n="hero_title">PERSONALIZACIÓN PREMIUM</h1>
             <ul class="hero-list">
-                <li data-i18n="PieDeTitulo2">Item 1</li>
-                <li data-i18n="PieDeTitulo2_1">Item 2</li>
-                <li data-i18n="PieDeTitulo2_2">Item 3</li>
-                <li data-i18n="PieDeTitulo2_3">Item 4</li>
+                <li data-i18n="hero_list_1">Bordados de Alta Calidad</li>
+                <li data-i18n="hero_list_2">Estampados Duraderos</li>
+                <li data-i18n="hero_list_3">Diseños Exclusivos</li>
+                <li data-i18n="hero_list_4">Envíos a todo USA</li>
             </ul>
-            <a href="https://wa.me/17148048375" class="cta-hero-btn" data-i18n="Contact2">CONTÁCTANOS</a>
+            <a href="./contacto.html" class="cta-hero-btn" data-i18n="hero_cta">CONTÁCTANOS</a>
         </div>
     </header>
 
     <section class="quote-section">
-        <h2 class="quote-text" data-i18n="Frase1">Frase Inspiradora</h2>
+        <h2 class="quote-text" data-i18n="quote_text">Tu marca merece ser vista. Nosotros la hacemos inolvidable.</h2>
     </section>
 
     <section class="services-section">
         <article class="service-card">
             <div class="icon-circle"><i class="fa-solid fa-star"></i></div>
-            <h3 class="service-title" data-i18n="Servicio1_Titulo">Servicio 1</h3>
-            <p data-i18n="Servicio1_Descripcion">Desc 1</p>
+            <h3 class="service-title" data-i18n="serv_1_title">Calidad Garantizada</h3>
+            <p data-i18n="serv_1_desc">Usamos los mejores hilos y telas del mercado.</p>
         </article>
         <article class="service-card">
             <div class="icon-circle"><i class="fa-solid fa-shirt"></i></div>
-            <h3 class="service-title" data-i18n="Servicio2_Titulo">Servicio 2</h3>
-            <p data-i18n="Servicio2_Descripcion">Desc 2</p>
+            <h3 class="service-title" data-i18n="serv_2_title">Ropa Personalizada</h3>
+            <p data-i18n="serv_2_desc">Camisetas, gorras, hoodies y más.</p>
         </article>
         <article class="service-card">
             <div class="icon-circle"><i class="fa-solid fa-scissors"></i></div>
-            <h3 class="service-title" data-i18n="Servicio3_Titulo">Servicio 3</h3>
-            <p data-i18n="Servicio3_Descripcion">Desc 3</p>
+            <h3 class="service-title" data-i18n="serv_3_title">Atención al Detalle</h3>
+            <p data-i18n="serv_3_desc">Cada puntada cuenta una historia.</p>
         </article>
     </section>
 
     <section class="cta-banner-section">
         <div class="cta-card-bg">
             <div class="cta-content-box">
-                <h2 class="cta-title" data-i18n="EstamosParaAyudarte_Titulo">Estamos para ayudarte</h2>
-                <p data-i18n="EstamosParaAyudarte_Descripcion1">Texto 1</p>
-                <p class="font-bold" data-i18n="EstamosParaAyudarte_Descripcion2" style="margin-top:10px; font-weight:700;">Texto 2</p>
-                
-                <a href="./contacto.html" class="btn-green-solid" data-i18n="EstamosParaAyudarte_Boton">¡CONTÁCTANOS!</a>
+                <h2 class="cta-title" data-i18n="cta_banner_title">Estamos para ayudarte</h2>
+                <p data-i18n="cta_banner_desc_1">Tenemos la experiencia y tecnología para cumplir con los más altos estándares.</p>
+                <p class="font-bold" style="margin-top:10px; font-weight:700;" data-i18n="cta_banner_desc_2">¿Tienes alguna inquietud?</p>
+                <a href="./contacto.html" class="btn-green-solid" data-i18n="cta_banner_btn">¡CONTÁCTANOS!</a>
             </div>
         </div>
     </section>
 
     <section class="categories-section">
-        <h2 style="font-size:2rem; font-weight:700; margin-bottom:3rem;" data-i18n="categories">Categorías</h2>
+        <h2 style="font-size:2rem; font-weight:700; margin-bottom:3rem;" data-i18n="cat_title">Categorías</h2>
         <div class="categories-grid">
-            <div class="category-item"><img src="../Img/Camisa.png"><div class="cat-overlay" data-i18n="camisas">Camisas</div></div>
-            <div class="category-item"><img src="../Img/chaqueta.png"><div class="cat-overlay" data-i18n="chaquetas">Chaquetas</div></div>
-            <div class="category-item"><img src="../Img/Hoodie.png"><div class="cat-overlay" data-i18n="hoodies">Hoodies</div></div>
-            <div class="category-item"><img src="../Img/gorra.png"><div class="cat-overlay" data-i18n="gorras">Gorras</div></div>
-            <div class="category-item"><img src="../Img/camiseta.png"><div class="cat-overlay" data-i18n="camisetas">Camisetas</div></div>
-            <div class="category-item"><img src="../Img/ChaquetaDeCuero.png"><div class="cat-overlay" data-i18n="cuero">Cuero</div></div>
+            <div class="category-item"><img src="../Img/Camisa.png"><div class="cat-overlay" data-i18n="cat_1">Camisas</div></div>
+            <div class="category-item"><img src="../Img/chaqueta.png"><div class="cat-overlay" data-i18n="cat_2">Chaquetas</div></div>
+            <div class="category-item"><img src="../Img/Hoodie.png"><div class="cat-overlay" data-i18n="cat_3">Hoodies</div></div>
+            <div class="category-item"><img src="../Img/gorra.png"><div class="cat-overlay" data-i18n="cat_4">Gorras</div></div>
+            <div class="category-item"><img src="../Img/camiseta.png"><div class="cat-overlay" data-i18n="cat_5">Camisetas</div></div>
+            <div class="category-item"><img src="../Img/ChaquetaDeCuero.png"><div class="cat-overlay" data-i18n="cat_6">Cuero</div></div>
         </div>
     </section>
 
     <footer class="main-footer">
-        <p>&copy; 2025 JD ThreadInk. Todos los derechos reservados.</p>
+        <p data-i18n="footer_text">&copy; 2025 JD ThreadInk. Todos los derechos reservados.</p>
     </footer>
 
     <a href="https://wa.me/17148048375" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
     <script src="../JS/Idioma.js"></script>
-    <script src="../JS/inicio.js"></script>
 </body>
 </html>

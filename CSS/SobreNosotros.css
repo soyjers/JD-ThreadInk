@@ -1,73 +1,127 @@
-/* Busca .about-header y REEMPLÁZALO por esto: */
+/* =========================================
+   ESTILOS ESPECÍFICOS: SOBRE NOSOTROS
+   ========================================= */
+
+/* --- 1. HEADER CON PARALLAX (Consistente con Contacto) --- */
 .about-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../Img/FondoImg.png') center/cover;
-    /* CAMBIO CLAVE: Usamos 'vh' (viewport height) para que se adapte a la pantalla */
-    height: 50vh; 
-    min-height: 400px; /* Para que no se vea enano en móviles */
+    position: relative;
+    height: 50vh; /* Altura: 50% de la pantalla */
+    min-height: 400px;
+    /* Imagen de fondo fija para efecto Parallax */
+    background: url('../Img/SobreNosotros.jpg') center/cover no-repeat fixed;
     display: flex; align-items: center; justify-content: center;
     text-align: center; color: white;
-    /* UX: Efecto Parallax suave */
-    background-attachment: fixed; 
 }
 
-.about-header h1 { 
-    font-size: 4rem; /* Texto más grande para igualar impacto */
-    font-weight: 800; 
-    margin-bottom: 0.5rem; 
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.header-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); /* Capa oscura para mejorar legibilidad */
+    z-index: 1;
 }
 
-/* Texto Historia */
-.about-text-section { padding: 4rem 2rem; background: white; text-align: center; }
-.text-container { max-width: 800px; margin: 0 auto; line-height: 1.8; color: #444; font-size: 1.1rem; }
-.text-container h2 { font-size: 2.5rem; color: #333; margin-bottom: 1.5rem; font-weight: 700; }
+.header-content { position: relative; z-index: 2; }
+.header-content h1 { 
+    font-size: 4rem; font-weight: 800; margin-bottom: 0.5rem; 
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+}
+.header-content p { font-size: 1.3rem; opacity: 0.9; font-weight: 500; }
 
-/* --- GALERÍA GRID (Masonry Style moderno) --- */
-.product-gallery-section {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
+/* --- 2. SECCIÓN DE TEXTO (HISTORIA) --- */
+.about-text-section { padding: 5rem 2rem; background: white; text-align: center; }
+.text-container { 
+    max-width: 800px; margin: 0 auto; 
+    font-size: 1.15rem; line-height: 1.8; color: #555; 
+}
+.text-container h2 { 
+    font-size: 2.5rem; color: #333; margin-bottom: 2rem; 
+    font-weight: 800; position: relative; display: inline-block; 
+}
+/* Pequeña línea decorativa debajo del título */
+.text-container h2::after {
+    content: ''; display: block; width: 60px; height: 4px;
+    background: var(--brand-blue, #0077cc); margin: 15px auto 0; border-radius: 2px;
 }
 
-.gallery-header { text-align: center; margin-bottom: 3rem; }
+/* --- 3. SECCIÓN MISIÓN Y VISIÓN (Diseño Premium) --- */
+.mission-vision-section {
+    padding: 0 2rem 6rem; /* Padding inferior generoso */
+    background: white;
+    margin-top: -2rem; /* Superposición sutil sobre la sección anterior */
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1100px; margin: 0 auto;
+}
+
+.mv-card {
+    background: #fff;
+    padding: 3.5rem 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative; overflow: hidden;
+}
+
+/* Borde superior de color */
+.mv-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+}
+.mv-card.mission::before { background: #333; }
+.mv-card.vision::before { background: var(--brand-blue, #0077cc); }
+
+.mv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.mv-icon {
+    font-size: 2.5rem; margin-bottom: 2rem;
+    color: #333; background: #f4f4f4;
+    width: 80px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; margin-left: auto; margin-right: auto;
+}
+.mv-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: #222; }
+.mv-card p { font-size: 1.05rem; color: #666; line-height: 1.6; }
+
+/* --- 4. GALERÍA DE PRODUCTOS (Grid Moderno) --- */
+.product-gallery-section { padding: 6rem 2rem; background-color: #f8f9fa; }
+.gallery-header { text-align: center; margin-bottom: 4rem; }
 .gallery-header h2 { font-size: 2.5rem; font-weight: 800; color: #333; margin-bottom: 0.5rem; }
+.gallery-header p { color: #666; font-size: 1.1rem; }
 
 .gallery-grid {
     display: grid;
-    /* Grid responsivo automático: mínimo 300px por imagen */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
+    /* Columnas responsivas que se adaptan al espacio */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1400px; margin: 0 auto;
 }
 
 .gallery-item {
-    position: relative;
-    height: 300px; /* Altura fija para uniformidad */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    position: relative; height: 320px; /* Altura fija para uniformidad */
+    border-radius: 15px; overflow: hidden;
+    cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background: #fff; /* Fondo blanco mientras carga la imagen */
 }
-
-.gallery-item:hover { transform: translateY(-5px); }
 
 .gallery-item img {
-    width: 100%; height: 100%;
-    object-fit: cover; /* Recorta la imagen para llenar el cuadro sin deformar */
-    transition: transform 0.5s ease;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
 }
-
 .gallery-item:hover img { transform: scale(1.1); }
 
-/* Efecto Overlay al pasar el mouse */
+/* Overlay al pasar el mouse */
 .overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.4);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; transition: opacity 0.3s;
 }
-
 .gallery-item:hover .overlay { opacity: 1; }
-.overlay i { color: white; font-size: 2rem; }
-
+.overlay i { color: white; font-size: 2.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }

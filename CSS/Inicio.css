@@ -37,23 +37,55 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .nav-item:hover, .nav-item.active { color: var(--brand-blue); background-color: rgba(0,0,0,0.03); }
 
-/* Idioma */
-.language-switcher { display: flex; gap: 15px; }
+/* --- ESTILOS DEL SELECTOR DE IDIOMA --- */
+.language-switcher {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
 .lang-btn {
-    position: relative; width: 45px; height: 45px;
-    background-color: #000; border: none; border-radius: 10px;
-    cursor: pointer; overflow: hidden; transition: transform 0.2s;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background-color: #000;
+    border: 2px solid transparent; /* Borde transparente por defecto */
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
+    opacity: 0.6; /* Un poco apagado cuando no está activo */
+    filter: grayscale(80%); /* Blanco y negro cuando inactivo (opcional) */
 }
-.lang-btn:hover { transform: scale(1.05); }
+
+/* ESTADO ACTIVO (El truco que pediste) */
+.lang-btn.active-lang {
+    transform: scale(1.25); /* Crece un 25% */
+    border-color: var(--brand-green); /* Borde verde marca (o usa #0077cc azul) */
+    opacity: 1; /* Totalmente visible */
+    filter: grayscale(0%); /* A todo color */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Sombra elegante */
+    z-index: 10; /* Se pone por encima del otro */
+}
+
+.lang-btn:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
 .lang-flag {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0.6; transition: opacity 0.3s;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
 }
-.lang-btn:hover .lang-flag { opacity: 0.9; }
+
 .lang-text {
-    position: relative; z-index: 2; color: white; font-weight: 800;
+    position: relative; z-index: 2;
+    color: white; font-weight: 800;
     display: flex; justify-content: center; align-items: center;
-    height: 100%; font-size: 0.85rem; text-shadow: 0 1px 3px rgba(0,0,0,1);
+    height: 100%; font-size: 0.85rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,1);
 }
 
 /* =========================================

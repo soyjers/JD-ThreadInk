@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta JD ThreadInk - Gold Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CONFIGURACIÓN BASE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #1a1a1a; /* Fondo oscuro para que veas el contraste */
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            gap: 60px;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        :root {
+            /* Degradado Dorado de Lujo */
+            --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --gold-color: #d4af37;
+            --dark-bg: #080808;
+        }
+
+        .card-side {
+            width: 508px;
+            height: 290px;
+            border-radius: 18px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        /* =========================================
+           FRENTE: ELEGANCIA TOTAL
+           ========================================= */
+        .card-front {
+            background-color: var(--dark-bg);
+            /* Textura sutil de fondo */
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.03) 0px,
+                rgba(255,255,255,0.03) 1px,
+                transparent 1px,
+                transparent 10px
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #333;
+        }
+
+        /* Marco dorado decorativo interno */
+        .card-front::after {
+            content: '';
+            position: absolute;
+            top: 15px; left: 15px; right: 15px; bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 14px;
+            pointer-events: none;
+        }
+
+        /* --- CORRECCIÓN DE TAMAÑO DEL LOGO --- */
+        .logo-container {
+            /* TAMAÑO REDUCIDO: Antes 160px, ahora 110px. Mucho más sutil. */
+            width: 110px; 
+            height: 110px;
+            
+            background: rgba(255, 255, 255, 0.05); /* Cristal oscuro */
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Borde dorado brillante */
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .front-logo img {
+            /* TAMAÑO DE IMAGEN: 65px para que tenga espacio libre alrededor */
+            width: 65px; 
+            height: auto;
+            display: block;
+            /* Sombra dorada para integrar el logo azul/negro al tema gold */
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+        }
+
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: 4px; 
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================================
+           REVERSO: LIMPIO Y PROFESIONAL
+           ========================================= */
+        .card-back {
+            background: #fff;
+            display: flex;
+        }
+
+        /* Banda lateral negra/dorada */
+        .side-bar {
+            width: 80px;
+            height: 100%;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .side-bar::after {
+            content: ''; position: absolute; right: 0; top: 0; bottom: 0;
+            width: 4px; background: var(--gold-gradient);
+        }
+
+        .initial {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 25px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Nombre y Cargo */
+        .header-info { margin-bottom: 20px; }
+        
+        .name {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #111;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b38728; /* Dorado mate para lectura */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Lista de contactos */
+        .contact-info { display: flex; flex-direction: column; gap: 10px; }
+
+        .c-item {
+            display: flex; align-items: center;
+            font-size: 0.8rem; color: #444; font-weight: 500;
+        }
+
+        .c-icon {
+            width: 24px; height: 24px;
+            background: #111;
+            color: #d4af37;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 12px;
+            font-size: 0.75rem;
+        }
+
+        /* QR Flotante */
+        .qr-area {
+            position: absolute;
+            bottom: 25px; right: 30px;
+            text-align: center;
+        }
+
+        .qr-border {
+            padding: 5px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .qr-placeholder {
+            width: 65px; height: 65px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            color: #ccc; font-size: 1.5rem;
+        }
+
+        .scan-me {
+            display: block; margin-top: 5px;
+            font-size: 0.55rem; font-weight: 700;
+            color: #b38728; text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        /* Marca de agua corregida (usa logo.png existente) */
+        .bg-watermark {
+            position: absolute;
+            right: 80px; top: 20px;
+            width: 200px;
+            opacity: 0.03;
+            pointer-events: none;
+            filter: grayscale(100%);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card-side card-front">
+        <div class="logo-container">
+            <img src="../Img/logodorado.png" alt="JD Logo" class="front-logo">
+        </div>
+        <div class="tagline">Personalización Textil</div>
+    </div>
+
+    <div class="card-side card-back">
+        
+        <img src="../Img/logo.png" class="bg-watermark">
+
+        <div class="side-bar">
+            <span class="initial">D</span>
+        </div>
+
+        <div class="content-area">
+            <div class="header-info">
+                <h1 class="name">Daniel Ruiz</h1>
+                <span class="title">Creative Director</span>
+            </div>
+
+            <div class="contact-info">
+                <div class="c-item">
+                    <div class="c-icon"><i class="fas fa-phone"></i></div>
+                    <span>+1 714 804 8375</span>
+                </div>
+                <div class="c-item">
+                    <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                    <span>Daniel.ruiz@jdthreadink.com</span>
+                </div>
+                <div class="c-item">
+                    <div class="c-icon"><i class="fas fa-globe"></i></div>
+                    <span>www.jdthreadink.com</span>
+                </div>
+                <div class="c-item">
+                    <div class="c-icon"><i class="fas fa-map-pin"></i></div>
+                    <span>California, USA</span>
+                </div>
+            </div>
+
+            <div class="qr-area">
+                <div class="qr-border">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                </div>
+                <span class="scan-me">Scan Me</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

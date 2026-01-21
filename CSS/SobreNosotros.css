@@ -2,12 +2,11 @@
    ESTILOS ESPECÍFICOS: SOBRE NOSOTROS
    ========================================= */
 
-/* --- 1. HEADER (OPTIMIZADO: SCROLL en vez de FIXED) --- */
+/* --- 1. HEADER --- */
 .about-header {
     position: relative;
     height: 50vh;
     min-height: 400px;
-    /* CAMBIO CLAVE: 'scroll' para que no se trabe */
     background: url('../Img/OficinaCool.png') center/cover no-repeat scroll;
     display: flex; align-items: center; justify-content: center;
     text-align: center; color: white;
@@ -69,6 +68,48 @@
 }
 .gallery-item:hover .overlay { opacity: 1; }
 .overlay i { color: white; font-size: 2.5rem; }
+
+/* --- 5. LIGHTBOX (¡IMPORTANTE! ESTO FALTABA O FALLABA) --- */
+.lightbox-modal {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.95); 
+    z-index: 10000; /* Z-Index muy alto para estar encima de todo */
+    display: none; /* Oculto por defecto */
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+}
+
+/* Esta clase se agrega con JS para mostrarlo */
+.lightbox-modal.active { 
+    display: flex !important; 
+}
+
+.lightbox-img { 
+    max-width: 90%; 
+    max-height: 80vh; 
+    border-radius: 5px; 
+    border: 2px solid white; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute; 
+    top: 30px; 
+    right: 40px; 
+    color: white;
+    font-size: 4rem; 
+    cursor: pointer; 
+    transition: transform 0.3s;
+}
+.lightbox-close:hover { 
+    transform: rotate(90deg); 
+    color: var(--brand-blue, #0077cc); 
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {

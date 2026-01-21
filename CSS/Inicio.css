@@ -4,7 +4,6 @@
    :root {
     --brand-dark: #333;
     --brand-black: #000;
-    --brand-green: #25D366;
     --brand-blue: #0077cc;
     --brand-bg: #f6f7f8;
     --font-main: 'Quicksand', sans-serif;
@@ -23,7 +22,7 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; margin: 0; }
 
 /* =========================================
-   2. NAVEGACIÓN (Global)
+   2. NAVEGACIÓN
    ========================================= */
 .main-nav {
     background-color: #fff;
@@ -40,32 +39,23 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .nav-item:hover, .nav-item.active { color: var(--brand-blue); background-color: rgba(0,0,0,0.03); }
 
-/* --- SELECTOR DE IDIOMA (CORREGIDO) --- */
+/* Selector de Idioma */
 .language-switcher { display: flex; gap: 15px; align-items: center; }
-
 .lang-btn {
     position: relative; width: 45px; height: 45px;
-    background-color: transparent; 
-    border: none; /* Sin borde por defecto */
-    border-radius: 12px; cursor: pointer; overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    background: transparent; border: none; border-radius: 12px; 
+    cursor: pointer; overflow: hidden; transition: all 0.3s; 
     opacity: 0.6; filter: grayscale(80%);
 }
-
-/* ESTADO ACTIVO: Solo Zoom y Sombra (Sin borde verde) */
 .lang-btn.active-lang {
-    transform: scale(1.25); 
-    opacity: 1; 
-    filter: grayscale(0%); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Sombra más marcada */
-    z-index: 10;
+    transform: scale(1.15); opacity: 1; filter: grayscale(0%); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-
 .lang-btn:hover { opacity: 1; filter: grayscale(0%); transform: scale(1.1); }
 .lang-btn img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
 
 /* =========================================
-   3. ESTILOS GLOBALES DE BOTONES
+   3. BOTONES
    ========================================= */
 .btn-primary {
     display: inline-block; padding: 14px 35px;
@@ -81,13 +71,25 @@ ul { list-style: none; padding: 0; margin: 0; }
 .btn-hero { border-color: white; }
 .btn-hero:hover { background-color: white; color: black !important; }
 
+/* Botón Blanco (Para sección mujer) */
+.btn-white { 
+    background-color: rgba(255,255,255,0.9) !important; 
+    color: var(--brand-black) !important; 
+    border: none !important;
+    backdrop-filter: blur(5px);
+}
+.btn-white:hover { 
+    background-color: white !important; 
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 /* =========================================
-   4. SECCIONES DE INICIO
+   4. SECCIONES INICIO
    ========================================= */
-/* Hero Section */
 .hero-section {
     position: relative; height: 90vh;
-    background: url('../Img/FondoImg.png') center/cover no-repeat; 
+    background: url('../Img/fondofav2.png') center/cover no-repeat; 
     display: flex; align-items: center; padding: 0 5%; color: white;
 }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1; }
@@ -110,7 +112,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .feature-card:hover { transform: translateY(-5px); }
 .feature-icon { font-size: 2.5rem; color: var(--brand-dark); margin-bottom: 1.5rem; }
 
-/* Servicios Home */
+/* Servicios */
 .services-home-section { padding: 6rem 2rem; text-align: center; }
 .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; }
 .service-item { width: 300px; }
@@ -120,21 +122,35 @@ ul { list-style: none; padding: 0; margin: 0; }
     font-size: 2.5rem; margin: 0 auto 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Banner Mujer */
+/* --- BANNER MUJER (ARREGLADO) --- */
 .cta-full-width {
-    padding: 6rem 2rem;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Img/mujer2.png') center/cover no-repeat;
-    text-align: center; color: white; display: flex; align-items: center; justify-content: center;
-}
-.cta-content { max-width: 700px; }
-.cta-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
-.cta-sub { font-weight: bold; margin-bottom: 2.5rem; font-size: 1.1rem; letter-spacing: 1px; }
-.btn-white { background-color: white !important; color: var(--brand-dark) !important; border-color: white !important; }
-.btn-white:hover { background-color: transparent !important; color: white !important; }
+    padding: 8rem 2rem;
+    
+    /* 1. Fondo de seguridad */
+    background-color: #555;
 
-/* =========================================
-   5. CATEGORÍAS (Diseño Premium)
-   ========================================= */
+    /* 2. Filtro MUY SUAVE (0.2) + Imagen */
+    /* Asegúrate de que el nombre del archivo sea exacto: mujer2.png */
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('../Img/mujer4.png');
+    
+    /* 3. Parallax */
+    background-attachment: fixed;
+    /* CENTRO-CENTRO: Para que no se corte la frente ni la barbilla */
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    text-align: center; 
+    color: white; 
+    display: flex; align-items: center; justify-content: center;
+    min-height: 650px;
+    position: relative;
+}
+.cta-content { max-width: 800px; z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.cta-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+.cta-sub { font-weight: 600; margin-bottom: 2.5rem; font-size: 1.3rem; letter-spacing: 1px; }
+
+/* Categorías */
 .categories-section { padding: 5rem 2rem; text-align: center; background-color: #fff; }
 .categories-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
 
@@ -148,7 +164,6 @@ ul { list-style: none; padding: 0; margin: 0; }
 .category-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 .category-item:hover img { transform: scale(1.15); }
 
-/* Overlay Categorías */
 .cat-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
@@ -167,12 +182,10 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .category-item:hover .cat-desc-text { opacity: 1; transform: translateY(0); }
 
-/* =========================================
-   6. FOOTER Y EXTRAS
-   ========================================= */
+/* Footer */
 .main-footer { text-align: center; padding: 2rem; background: white; color: #666; margin-top: auto; border-top: 1px solid #eee; }
 
-/* Botones Flotantes */
+/* Botón Flotante */
 .instagram-float {
     position: fixed; bottom: 25px; right: 25px;
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -182,60 +195,26 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .instagram-float:hover { transform: scale(1.1) rotate(10deg); }
 
-/* Lightbox */
-.lightbox-modal {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95); z-index: 10000; display: none;
-    justify-content: center; align-items: center; flex-direction: column;
-}
-.lightbox-modal.active { display: flex; }
-.lightbox-img { max-width: 90%; max-height: 80vh; border-radius: 5px; border: 2px solid white; }
-.lightbox-close {
-    position: absolute; top: 30px; right: 40px; color: white;
-    font-size: 3rem; cursor: pointer; transition: transform 0.3s;
-}
-.lightbox-close:hover { transform: rotate(90deg); color: var(--brand-blue); }
-
 /* Animaciones */
-.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.fade-in-up { opacity: 0; animation: fadeInUp 1s ease-out forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* =========================================
-   7. RESPONSIVE DESIGN (Móviles y Tablets)
-   ========================================= */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
     .hero-title { font-size: 3rem; }
-    .hero-section { height: auto; min-height: 80vh; padding-top: 6rem; padding-bottom: 4rem; }
-    .main-nav { padding: 10px 20px; }
 }
-
 @media (max-width: 768px) {
     .main-nav { flex-direction: column; padding: 15px; }
-    .nav-links { flex-wrap: wrap; justify-content: center; width: 100%; gap: 10px; margin: 10px 0; }
-    .nav-item { font-size: 0.95rem; padding: 8px 12px; background: #f4f4f4; border-radius: 50px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; margin: 10px 0; }
+    .hero-title { font-size: 2.2rem; }
     
-    .hero-title { font-size: 2.2rem; line-height: 1.2; }
-    .hero-list li { font-size: 1rem; }
-    .cta-hero-btn { width: 100%; justify-content: center; box-sizing: border-box; }
-    
-    .quote-text { font-size: 1.1rem; }
-    .cta-title { font-size: 2rem; }
-    
-    .cta-card-bg { padding: 2rem; text-align: center; justify-content: center; }
-    .cta-content-box { width: 100%; }
-    
-    .services-section { grid-template-columns: 1fr; gap: 2rem; }
-}
-
-@media (max-width: 480px) {
-    .hero-title { font-size: 1.8rem; }
-    .nav-item { width: 100%; text-align: center; }
-    .language-switcher { width: 100%; justify-content: center; margin-top: 10px; }
-    
-    .whatsapp-float, .instagram-float { 
-        width: 50px; height: 50px; font-size: 24px;
-        bottom: 15px; right: 15px;
+    /* En móvil quitamos fixed para evitar errores de zoom y fondo negro */
+    .cta-full-width {
+        background-attachment: scroll;
+        background-position: center center;
+        min-height: 400px;
     }
 }

@@ -38,16 +38,22 @@
   "cat_4": "Caps",
   "cat_5": "T-Shirts",
   "cat_6": "Leather",
+  "cat_desc_1": "Corporate elegance.",
+  "cat_desc_2": "Protection and style.",
+  "cat_desc_3": "Urban comfort.",
+  "cat_desc_4": "Your logo at the top.",
+  "cat_desc_5": "HD Printing.",
+  "cat_desc_6": "Premium finishes.",
 
   "about_header_title": "Our History",
   "about_header_sub": "Passion for detail in every thread.",
   "about_essence_title": "Our Essence",
-  "about_essence_p1": "At <strong>JD THREADINK</strong>, we understand that a garment is more than fabric; it is a canvas for expression. We were born with the conviction that quality is non-negotiable.",
+  "about_essence_p1": "At <strong>JD THREADINK</strong>, we understand that a garment is more than fabric; it is a canvas for expression.",
   "about_essence_p2": "We specialize in transforming abstract concepts into tangible high-end products.",
   "mission_title": "Mission",
-  "mission_text": "To empower brands through textile customization, ensuring quality and precision in every delivery.",
+  "mission_text": "To empower brands through textile customization, ensuring quality and precision.",
   "vision_title": "Vision",
-  "vision_text": "To be the leading benchmark in California and the USA for innovative textile branding solutions.",
+  "vision_text": "To be the leading benchmark in California and the USA for innovative textile branding.",
   "portfolio_title": "Project Gallery",
   "portfolio_sub": "A sample of our recent work.",
 
@@ -64,12 +70,12 @@
   "wa_desc": "Fast and personalized attention",
   "wa_btn": "Send Message",
 
-  "footer_text": "© 2025 JD ThreadInk. All rights reserved.",
+  "contact_admin_title": "Direct Contact",
+  "contact_admin_sub": "Administrative and commercial lines.",
+  "contact_call_title": "Phone Call",
+  "contact_call_btn": "Call Now",
+  "contact_email_title": "Email",
+  "contact_email_btn": "Send Email",
 
-  "cat_desc_1": "Corporate elegance and high-profile uniforms.",
-    "cat_desc_2": "Protection and style with durable embroidery.",
-    "cat_desc_3": "Urban comfort for your brand or team.",
-    "cat_desc_4": "Your logo at the top, with 3D relief.",
-    "cat_desc_5": "High-definition, long-lasting DTF printing.",
-    "cat_desc_6": "Premium finishes for demanding materials."
+  "footer_text": "© 2025 JD ThreadInk. All rights reserved."
 }

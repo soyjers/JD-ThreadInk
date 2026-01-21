@@ -8,7 +8,7 @@
     height: 50vh;
     min-height: 400px;
     /* CAMBIO CLAVE: 'scroll' para que no se trabe */
-    background: url('../Img/SobreNosotros.jpg') center/cover no-repeat scroll;
+    background: url('../Img/OficinaCool.png') center/cover no-repeat scroll;
     display: flex; align-items: center; justify-content: center;
     text-align: center; color: white;
 }

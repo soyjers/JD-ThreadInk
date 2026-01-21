@@ -2,14 +2,11 @@
   "nav_home": "Inicio",
   "nav_about": "Sobre Nosotros",
   "nav_contact": "Contacto",
-
   "hero_title": "PERSONALIZACIÓN TEXTIL DE ALTO NIVEL",
   "hero_sub": "Expertos en bordados y estampados que marcan la diferencia.",
   "hero_cta": "COTIZAR AHORA",
-
   "intro_title": "Llevamos tu imagen al siguiente nivel",
   "intro_text": "En JD ThreadInk no solo personalizamos prendas, creamos identidad. Con años de experiencia en el mercado americano, fusionamos tecnología de punta con artesanía detallada para entregar productos que superan expectativas.",
-
   "why_title": "¿Por qué elegirnos?",
   "why_1_title": "Tecnología de Punta",
   "why_1_desc": "Utilizamos maquinaria de última generación para acabados precisos.",
@@ -17,7 +14,6 @@
   "why_2_desc": "Hilos y telas seleccionados para garantizar durabilidad.",
   "why_3_title": "Asesoría Experta",
   "why_3_desc": "Te acompañamos desde el diseño hasta el producto final.",
-
   "serv_title": "Nuestros Servicios",
   "serv_1_title": "Bordado Computarizado",
   "serv_1_desc": "Ideal para uniformes, gorras y marcas que buscan elegancia y relieve duradero.",
@@ -25,12 +21,10 @@
   "serv_2_desc": "Colores vibrantes y diseños complejos plasmados con la mejor tecnología.",
   "serv_3_title": "Diseño Personalizado",
   "serv_3_desc": "Digitalizamos tu logo y adaptamos tus ideas a cualquier tipo de prenda.",
-
   "cta_banner_title": "¿Listo para destacar?",
   "cta_banner_desc": "Ya sea para tu empresa, tu equipo o tu marca de ropa, tenemos la solución perfecta para ti.",
   "cta_banner_sub": "Calidad garantizada en cada pedido.",
   "cta_banner_btn": "CONTACTAR ASESOR",
-
   "cat_title": "Categorías Destacadas",
   "cat_1": "Camisas",
   "cat_2": "Chaquetas",
@@ -38,21 +32,25 @@
   "cat_4": "Gorras",
   "cat_5": "Camisetas",
   "cat_6": "Cuero",
-
+  "cat_desc_1": "Elegancia corporativa.",
+  "cat_desc_2": "Protección y estilo.",
+  "cat_desc_3": "Comodidad urbana.",
+  "cat_desc_4": "Tu logo en lo alto.",
+  "cat_desc_5": "Impresión HD.",
+  "cat_desc_6": "Acabados premium.",
   "about_header_title": "Nuestra Historia",
   "about_header_sub": "Pasión por el detalle en cada hilo.",
   "about_essence_title": "Nuestra Esencia",
-  "about_essence_p1": "En <strong>JD THREADINK</strong>, entendemos que una prenda es más que tela; es un lienzo de expresión. Nacimos con la convicción de que la calidad no es negociable.",
+  "about_essence_p1": "En <strong>JD THREADINK</strong>, entendemos que una prenda es más que tela; es un lienzo de expresión.",
   "about_essence_p2": "Nos especializamos en transformar conceptos abstractos en productos tangibles de alta gama.",
   "mission_title": "Misión",
-  "mission_text": "Empoderar marcas a través de la personalización textil, garantizando calidad y precisión en cada entrega.",
+  "mission_text": "Empoderar marcas a través de la personalización textil, garantizando calidad.",
   "vision_title": "Visión",
-  "vision_text": "Ser el referente líder en California y USA en soluciones de branding textil innovador.",
+  "vision_text": "Ser el referente líder en California y USA en soluciones de branding.",
   "portfolio_title": "Galería de Proyectos",
   "portfolio_sub": "Una muestra de nuestro trabajo reciente.",
-
   "contact_header_title": "Hablemos",
-  "social_title": "Canales de Atención",
+  "social_title": "Redes Sociales",
   "social_sub": "Síguenos o escríbenos directamente.",
   "ig_title": "Instagram",
   "ig_desc": "Mira nuestro portafolio diario",
@@ -61,15 +59,13 @@
   "tiktok_desc": "Compra nuestros productos",
   "tiktok_btn": "Ir a la Tienda",
   "wa_title": "WhatsApp",
-  "wa_desc": "Atención rápida y personalizada",
+  "wa_desc": "Atención rápida",
   "wa_btn": "Enviar Mensaje",
-
-  "footer_text": "© 2025 JD ThreadInk. Todos los derechos reservados.",
-
-  "cat_desc_1": "Elegancia corporativa y uniformes de alto perfil.",
-    "cat_desc_2": "Protección y estilo con bordados resistentes.",
-    "cat_desc_3": "Comodidad urbana para tu marca o equipo.",
-    "cat_desc_4": "Tu logo en lo más alto, con relieve 3D.",
-    "cat_desc_5": "Impresión DTF de alta definición y duración.",
-    "cat_desc_6": "Acabados premium para materiales exigentes."
+  "contact_admin_title": "Contacto Directo",
+  "contact_admin_sub": "Líneas de atención administrativa y comercial.",
+  "contact_call_title": "Llamadas",
+  "contact_call_btn": "Llamar Ahora",
+  "contact_email_title": "Correo",
+  "contact_email_btn": "Enviar Email",
+  "footer_text": "© 2025 JD ThreadInk. Todos los derechos reservados."
 }

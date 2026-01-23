@@ -1,0 +1,18 @@
+# 1. Definir archivo de inicio
+DirectoryIndex inicio.html index.html
+
+# 2. Evitar listado de carpetas (Seguridad)
+Options -Indexes
+
+# 3. Activar el motor de reescritura
+RewriteEngine On
+
+# 4. Forzar HTTPS (Redireccionar http a https)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 5. Quitar la extensión .html de la URL (Estética)
+# Si el usuario escribe /contacto, el servidor busca contacto.html internamente
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

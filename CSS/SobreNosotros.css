@@ -1,5 +1,5 @@
 /* =========================================
-   ESTILOS ESPECÍFICOS: SOBRE NOSOTROS
+   ESTILOS ESPECÍFICOS: SOBRE NOSOTROS (TU ORIGINAL)
    ========================================= */
 
 /* --- 1. HEADER --- */
@@ -69,53 +69,67 @@
 .gallery-item:hover .overlay { opacity: 1; }
 .overlay i { color: white; font-size: 2.5rem; }
 
-/* --- 5. LIGHTBOX (¡IMPORTANTE! ESTO FALTABA O FALLABA) --- */
+/* --- 5. LIGHTBOX --- */
 .lightbox-modal {
     position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.95); 
-    z-index: 10000; /* Z-Index muy alto para estar encima de todo */
-    display: none; /* Oculto por defecto */
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
+    z-index: 10000; 
+    display: none; 
+    justify-content: center; align-items: center; flex-direction: column;
 }
 
-/* Esta clase se agrega con JS para mostrarlo */
-.lightbox-modal.active { 
-    display: flex !important; 
-}
+.lightbox-modal.active { display: flex !important; }
 
 .lightbox-img { 
-    max-width: 90%; 
-    max-height: 80vh; 
-    border-radius: 5px; 
-    border: 2px solid white; 
+    max-width: 90%; max-height: 80vh; 
+    border-radius: 5px; border: 2px solid white; 
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .lightbox-close {
-    position: absolute; 
-    top: 30px; 
-    right: 40px; 
-    color: white;
-    font-size: 4rem; 
-    cursor: pointer; 
-    transition: transform 0.3s;
+    position: absolute; top: 30px; right: 40px; 
+    color: white; font-size: 4rem; cursor: pointer; transition: transform 0.3s;
 }
-.lightbox-close:hover { 
-    transform: rotate(90deg); 
-    color: var(--brand-blue, #0077cc); 
-}
+.lightbox-close:hover { transform: rotate(90deg); color: var(--brand-blue, #0077cc); }
 
-/* --- RESPONSIVE --- */
+/* =========================================
+   RESPONSIVE DESIGN (MEJORADO)
+   ========================================= */
 @media (max-width: 768px) {
-    .about-header { height: 40vh; min-height: 300px; }
-    .header-content h1 { font-size: 2.5rem; }
-    .mv-grid { gap: 2rem; }
-    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); gap: 15px; }
-    .gallery-item { height: 280px; }
+    
+    /* Header más bajo en celular */
+    .about-header { 
+        height: 40vh; 
+        min-height: 250px; 
+    }
+    .header-content h1 { 
+        font-size: 2.2rem; /* Título no tan gigante */
+    }
+    .header-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Misión y Visión apiladas */
+    .mv-grid { 
+        grid-template-columns: 1fr; /* Una columna */
+        gap: 1.5rem; 
+    }
+    .mv-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Galería en 2 columnas (más profesional que 1 sola larga) */
+    .gallery-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
+    .gallery-item { 
+        height: 180px; /* Fotos más pequeñas */
+    }
+    
+    .about-text-section {
+        padding: 3rem 1.5rem;
+    }
 }

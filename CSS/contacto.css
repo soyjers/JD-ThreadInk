@@ -1,5 +1,5 @@
 /* =========================================
-   ESTILOS ESPECÍFICOS: CONTACTO
+   ESTILOS ESPECÍFICOS: CONTACTO (TU ORIGINAL)
    ========================================= */
 
 /* Header */
@@ -77,10 +77,40 @@
 .email .btn-follow { background: linear-gradient(90deg, #e63946, #d62828); box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3); }
 .email-text { font-size: 0.9rem; word-break: break-all; font-weight: 600; color: #555; }
 
+/* =========================================
+   RESPONSIVE DESIGN (MEJORADO)
+   ========================================= */
 @media (max-width: 768px) {
-    .contact-header-bg { height: 40vh; margin-bottom: 3rem; }
-    .contact-main-title { font-size: 2.5rem; }
-    .social-section { padding: 0 1rem; margin-bottom: 4rem; }
-    .social-grid { gap: 2rem; grid-template-columns: 1fr; }
-    .social-card { padding: 2rem 1.5rem; max-width: 100%; }
+    /* Header ajustado */
+    .contact-header-bg { 
+        height: 35vh; 
+        min-height: 250px; /* No tan alto en celular */
+        margin-bottom: 3rem; 
+    }
+    .contact-main-title { 
+        font-size: 2.2rem; 
+    }
+    
+    /* Espaciado general */
+    .social-section { 
+        padding: 0 1.5rem; 
+        margin-bottom: 3rem; 
+    }
+    
+    /* Grids en columna */
+    .social-grid { 
+        gap: 2rem; 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Tarjetas compactas pero bonitas */
+    .social-card { 
+        padding: 2rem 1.5rem; 
+        max-width: 100%; 
+        /* Mantener diseño vertical original pero ajustado */
+    }
+    
+    .icon-wrapper {
+        font-size: 3rem; /* Icono un poco más pequeño */
+    }
 }

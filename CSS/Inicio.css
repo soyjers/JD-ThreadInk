@@ -1,5 +1,5 @@
 /* =========================================
-   1. VARIABLES Y BASE GLOBAL
+   1. VARIABLES Y BASE GLOBAL (TU DISEÑO ORIGINAL)
    ========================================= */
    :root {
     --brand-dark: #333;
@@ -31,7 +31,15 @@ ul { list-style: none; padding: 0; margin: 0; }
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     position: sticky; top: 0; z-index: 1000;
 }
-.nav-logo img { width: 140px; display: block; }
+
+/* ARREGLO DEL LOGO (Escritorio) */
+.nav-logo img { 
+    width: 140px; 
+    height: auto; /* Importante para proporción */
+    display: block; 
+    object-fit: contain;
+}
+
 .nav-links { display: flex; gap: 20px; align-items: center; }
 .nav-item {
     font-size: 1.1rem; font-weight: 600; padding: 8px 16px;
@@ -55,7 +63,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .lang-btn img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
 
 /* =========================================
-   3. BOTONES
+   3. BOTONES (TUS ESTILOS ORIGINALES)
    ========================================= */
 .btn-primary {
     display: inline-block; padding: 14px 35px;
@@ -71,7 +79,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .btn-hero { border-color: white; }
 .btn-hero:hover { background-color: white; color: black !important; }
 
-/* Botón Blanco (Para sección mujer) */
+/* Botón Blanco */
 .btn-white { 
     background-color: rgba(255,255,255,0.9) !important; 
     color: var(--brand-black) !important; 
@@ -122,24 +130,15 @@ ul { list-style: none; padding: 0; margin: 0; }
     font-size: 2.5rem; margin: 0 auto 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* --- BANNER MUJER (ARREGLADO) --- */
+/* --- BANNER MUJER (MANTENIENDO TU ORIGINAL) --- */
 .cta-full-width {
     padding: 8rem 2rem;
-    
-    /* 1. Fondo de seguridad */
     background-color: #555;
-
-    /* 2. Filtro MUY SUAVE (0.2) + Imagen */
-    /* Asegúrate de que el nombre del archivo sea exacto: mujer2.png */
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('../Img/mujer4.png');
-    
-    /* 3. Parallax */
     background-attachment: fixed;
-    /* CENTRO-CENTRO: Para que no se corte la frente ni la barbilla */
     background-position: center center; 
     background-size: cover;
     background-repeat: no-repeat;
-    
     text-align: center; 
     color: white; 
     display: flex; align-items: center; justify-content: center;
@@ -202,19 +201,74 @@ ul { list-style: none; padding: 0; margin: 0; }
 .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .hero-title { font-size: 3rem; }
-}
+/* =========================================
+   RESPONSIVE DESIGN (MEJORADO PARA MÓVIL)
+   ========================================= */
 @media (max-width: 768px) {
-    .main-nav { flex-direction: column; padding: 15px; }
-    .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; margin: 10px 0; }
-    .hero-title { font-size: 2.2rem; }
     
-    /* En móvil quitamos fixed para evitar errores de zoom y fondo negro */
-    .cta-full-width {
-        background-attachment: scroll;
-        background-position: center center;
+    /* 1. ARREGLO DEL LOGO EN MÓVIL */
+    .nav-logo img {
+        width: auto !important;       /* Deja que el ancho fluya */
+        height: auto !important;      /* Deja que el alto fluya */
+        max-width: 140px !important;  /* Límite de ancho */
+        max-height: 60px !important;  /* Límite de alto para no romper el menú */
+        object-fit: contain;          /* Mantiene la proporción perfecta */
+        margin: 0 auto;               /* Centrado */
+    }
+
+    /* 2. MENÚ COMPACTO */
+    .main-nav { 
+        flex-direction: column; 
+        padding: 15px; 
+        gap: 15px;
+    }
+    .nav-links { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 15px; 
+        margin: 10px 0; 
+    }
+    .nav-item {
+        font-size: 0.95rem;
+        padding: 5px 10px;
+    }
+
+    /* 3. HERO (FONDO) MÁS CORTO */
+    .hero-section {
+        height: 60vh; /* Ocupa menos pantalla */
         min-height: 400px;
     }
+    .hero-title { 
+        font-size: 2.2rem; /* Título más pequeño */
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* 4. SECCIONES MÁS COMPACTAS */
+    .intro-section, .why-us-section, .services-home-section, .categories-section {
+        padding: 3rem 1.5rem; /* Menos relleno arriba/abajo */
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    /* 5. TARJETAS UNA DEBAJO DE OTRA */
+    .features-grid, .services-grid, .categories-grid {
+        gap: 20px;
+    }
+    .feature-card, .service-item {
+        width: 100%; /* Ocupar ancho disponible */
+        max-width: 350px; /* Pero no gigantes */
+    }
+    
+    /* 6. BANNER MUJER (Sin fixed para evitar errores) */
+    .cta-full-width {
+        background-attachment: scroll; /* Scroll normal en móvil */
+        background-position: center center;
+        min-height: 400px;
+        padding: 4rem 1.5rem;
+    }
+    .cta-title { font-size: 2rem; }
+    .cta-sub { font-size: 1rem; }
 }

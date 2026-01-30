@@ -8,7 +8,7 @@ async function setLanguage(lang) {
   try {
       // 2. Cargar el archivo JSON correspondiente
       // Asegúrate de que la ruta sea correcta desde donde se carga el HTML
-      const response = await fetch(`../JSON/${lang.toUpperCase()}.JSON`);
+      const response = await fetch(`JSON/${lang.toUpperCase()}.JSON`);
       
       if (!response.ok) {
           throw new Error(`No se pudo cargar el archivo de idioma: ${lang}`);
@@ -57,3 +57,4 @@ function updateActiveButton(lang) {
       activeBtn.classList.add('active-lang');
   }
 }
+
